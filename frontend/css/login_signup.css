@@ -176,4 +176,24 @@ Card Adjustments
   backface-visibility: hidden;
 }
 
+.card-back {
+  /* puts the backside in the correct position. To see login first before signup. */
+  transform: rotateY(180deg);
+}
 
+.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+  /* rotates the card to show the signup side */
+  transform: rotateY(180deg);
+}
+
+.center-wrap{
+  /* adds a smooth and clean 3D effect to the card when it rotates */
+  position: absolute;
+  width: 100%;
+  padding: 0 35px;
+  top: 50%;
+  left: 0;
+  transform: translate3d(0, -50%, 35px) perspective(100px);
+  z-index: 20;
+  display: block;
+}
