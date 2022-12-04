@@ -171,8 +171,6 @@ Card Adjustments
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -237,4 +235,39 @@ Styling the input fields
   border: none;
   outline: none;
   box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+}
+
+.input-icon {
+  /* properly positioning & styling the icons in the fields */
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 48px;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: left;
+  color: #ffeba7;
+  -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+/* 
+########################
+Styling the placeholders
+########################
+*/
+
+.form-group input::-webkit-input-placeholder  {
+  /* styling the placeholders for Chrome, Safari and Opera */
+  color: #c4c3ca;
+  opacity: 0.7;
+  -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.form-group input:focus::-webkit-input-placeholder  {
+  /* styling the placeholders for Chrome, Safari and Opera when they are active; it removes the placeholder with a delay effect*/
+  opacity: 0;
+  -webkit-transition: all 200ms linear;
+    transition: all 200ms linear; /* adds the delay disappearing effect when input box is clicked */
 }
