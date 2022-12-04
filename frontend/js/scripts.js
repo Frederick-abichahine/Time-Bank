@@ -33,7 +33,8 @@ timebank_pages.loadLoginSignup = () => {
         console.log('Login button clicked')
         l_email = login_email.value
         l_password = login_password.value
-        
+        // take to a page to say welcome back, sleep for few seconds and then redirect to the home page
+        location.assign('../html/index.html')
     })
 
     signup_btn.addEventListener('click', () => {
@@ -41,6 +42,8 @@ timebank_pages.loadLoginSignup = () => {
         s_username = signup_username.value
         s_email = signup_email.value
         s_password = signup_password.value
+        // take to a page that says thank you for signing up, sleep for few seconds and then redirect to home page
+        location.assign('../html/index.html')
     })
 
 }
