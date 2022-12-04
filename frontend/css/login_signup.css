@@ -42,3 +42,35 @@ a{
 a:hover {
 	text-decoration: none;
 }
+
+/*
+###############
+General Styling
+###############
+ */
+
+.section{
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.full-height{
+  min-height: 100vh;
+}
+
+p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+h6 span{
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
