@@ -3,6 +3,7 @@
 Importing fonts
 ###############
 */
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
 /* 
@@ -90,8 +91,10 @@ Styling checkboxes
 .checkbox:checked + label, .checkbox:not(:checked) + label{
   /* Adding bar to switch between login & signup */
   position: relative;
-  display: block;
+  display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   width: 60px;
   height: 16px;
   border-radius: 8px;
@@ -104,7 +107,10 @@ Styling checkboxes
 .checkbox:checked + label:before, .checkbox:not(:checked) + label:before{
   /* Adding arrow design */
   position: absolute;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -116,9 +122,8 @@ Styling checkboxes
   top: -10px;
   left: -10px;
   line-height: 36px;
-  text-align: center;
   font-size: 24px;
-  transition: all 0.5s ease;
+  transition: all 0.7s ease;
 }
 
 .checkbox:checked + label:before{
@@ -194,7 +199,7 @@ Card adjustments
   left: 0;
   transform: translate3d(0, -50%, 50px) perspective(100px);
   z-index: 20;
-  display: block;
+  display: flex;
 }
 
 /* 
@@ -206,7 +211,7 @@ Styling the input fields
 .form-group{ 
   /* positioning the fields */
   position: relative;
-  display: block;
+  display: flex;
     margin: 0;
     padding: 0;
 }
