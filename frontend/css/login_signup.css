@@ -5,6 +5,12 @@ Importing fonts
 */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
+/* 
+#################
+Styling Main Body
+#################
+*/
+
 body{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 300;
@@ -13,4 +19,26 @@ body{
 	color: #c4c3ca;
 	background-color: #1f2029;
 	overflow-x: hidden;
+}
+
+/* 
+##################
+Styling Clickables
+##################
+*/
+
+.link {
+  color: #c4c3ca;
+}
+
+.link:hover {
+  color: #ffeba7;
+}
+
+a{
+	cursor: pointer;
+  transition: all 200ms linear;
+}
+a:hover {
+	text-decoration: none;
 }
