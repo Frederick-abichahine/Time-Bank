@@ -7,7 +7,7 @@ Importing fonts
 
 /* 
 #################
-Styling Main Body
+Styling main body
 #################
 */
 
@@ -23,15 +23,15 @@ body{
 
 /* 
 ##################
-Styling Clickables
+Styling clickables
 ##################
 */
 
-.link {
+.link{
   color: #c4c3ca;
 }
 
-.link:hover {
+.link:hover{
   color: #ffeba7;
 }
 
@@ -39,13 +39,14 @@ a{
 	cursor: pointer;
   transition: all 200ms linear;
 }
-a:hover {
+
+a:hover{
 	text-decoration: none;
 }
 
 /*
 ###############
-General Styling
+General styling
 ###############
  */
 
@@ -59,13 +60,13 @@ General Styling
   min-height: 100vh;
 }
 
-p {
+p{
   font-weight: 500;
   font-size: 14px;
   line-height: 1.7;
 }
 
-h4 {
+h4{
   font-weight: 600;
 }
 
@@ -77,7 +78,7 @@ h6 span{
 
 /* 
 ##################
-Styling Checkboxes
+Styling checkboxes
 ##################
 */
 
@@ -120,18 +121,18 @@ Styling Checkboxes
   transition: all 0.5s ease;
 }
 
-.checkbox:checked + label:before {
+.checkbox:checked + label:before{
   /* Creating the roll for the arrow between login and signup */
   transform: translateX(44px) rotate(-270deg);
 }
 
 /* 
 ################
-Card Adjustments
+Card adjustments
 ################
 */
 
-.card-3d-wrap {
+.card-3d-wrap{
   /* fixing position of main card in space */
   position: relative;
   width: 440px;
@@ -143,7 +144,7 @@ Card Adjustments
   margin-top: 60px;
 }
 
-.card-3d-wrapper {
+.card-3d-wrapper{
   /* fixing position of card in space */
   width: 100%;
   height: 100%;
@@ -155,7 +156,7 @@ Card Adjustments
   transition: all 600ms ease-out; /*to give it a slight delay effect*/
 }
 
-.card-front, .card-back {
+.card-front, .card-back{
   /* styling the front and back of the card; color, size and image */
   width: 100%;
   height: 100%;
@@ -174,12 +175,12 @@ Card Adjustments
   backface-visibility: hidden;
 }
 
-.card-back {
+.card-back{
   /* puts the backside in the correct position. To see login first before signup. */
   transform: rotateY(180deg);
 }
 
-.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper{
   /* rotates the card to show the signup side */
   transform: rotateY(180deg);
 }
@@ -210,7 +211,7 @@ Styling the input fields
     padding: 0;
 }
 
-.form-style {
+.form-style{
   /* styling the fields */
   padding: 13px 20px;
   padding-left: 55px;
@@ -230,14 +231,14 @@ Styling the input fields
   box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
 }
 
-.form-style:focus, .form-style:active {
+.form-style:focus, .form-style:active{
   /* styling the fields when they are active */
   border: none;
   outline: none;
   box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
 }
 
-.input-icon {
+.input-icon{
   /* properly positioning & styling the icons in the fields */
   position: absolute;
   top: 0;
@@ -257,7 +258,7 @@ Styling the placeholders
 ########################
 */
 
-.form-group input::-webkit-input-placeholder  {
+.form-group input::-webkit-input-placeholder{
   /* styling the placeholders for Chrome, Safari and Opera */
   color: #c4c3ca;
   opacity: 0.7;
@@ -265,9 +266,39 @@ Styling the placeholders
     transition: all 200ms linear;
 }
 
-.form-group input:focus::-webkit-input-placeholder  {
+.form-group input:focus::-webkit-input-placeholder{
   /* styling the placeholders for Chrome, Safari and Opera when they are active; it removes the placeholder with a delay effect*/
   opacity: 0;
   -webkit-transition: all 200ms linear;
     transition: all 200ms linear; /* adds the delay disappearing effect when input box is clicked */
+}
+
+/* 
+#########################
+Styling the submit button
+#########################
+*/
+
+.btn{
+  /* styling the submit button */
+  border-radius: 4px;
+  height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-transition : all 200ms linear;
+  transition: all 200ms linear;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  background-color: #ffeba7;
+  color: #102770;
+  box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
 }
