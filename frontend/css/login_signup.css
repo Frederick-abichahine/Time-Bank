@@ -302,3 +302,11 @@ Styling the submit button
   color: #102770;
   box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
 }
+
+
+.btn:active, .btn:focus, .btn:hover{  
+  /* styling the submit button when it is active */
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}
