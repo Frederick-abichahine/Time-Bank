@@ -3,6 +3,7 @@
 // ##################################
 
 const timebank_pages = {}
+const base_url = "" // will be added later
 
 // ###############
 // Loader Function
@@ -30,10 +31,16 @@ timebank_pages.loadLoginSignup = () => {
 
     login_btn.addEventListener('click', () => {
         console.log('Login button clicked')
+        l_email = login_email.value
+        l_password = login_password.value
+        
     })
 
     signup_btn.addEventListener('click', () => {
         console.log('Signup button clicked')
+        s_username = signup_username.value
+        s_email = signup_email.value
+        s_password = signup_password.value
     })
 
 }
