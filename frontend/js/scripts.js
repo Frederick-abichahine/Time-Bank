@@ -99,4 +99,32 @@ timebank_pages.loadIndex = () => {
             light.style.left = `${e.target.offsetLeft + light.offsetWidth / 4}px`;
         });
     });
+
+    // Going to the appropriate page upon click
+    const home = document.getElementById('home_btn')
+    const profile = document.getElementById('profile_btn')
+    const post = document.getElementById('post_btn')
+    const about = document.getElementById('about_btn')
+    const delay = ms => new Promise(res => setTimeout(res,ms))
+
+    home.addEventListener('click', async () => {
+        console.log('home button clicked')
+        await delay(700) // adding a small delay for the animation to take place
+        location.assign('../html/index.html')
+    })
+    profile.addEventListener('click', async () => {
+        console.log('profile button clicked')
+        await delay(700)
+        location.assign('../html/index.html')
+    })
+    post.addEventListener('click', async () => {
+        console.log('post button clicked')
+        await delay(700)
+        location.assign('../html/index.html')
+    })
+    about.addEventListener('click', async () => {
+        console.log('about button clicked')
+        await delay(700)
+        location.assign('../html/index.html')
+    })
 }
