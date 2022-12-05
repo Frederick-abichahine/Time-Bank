@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('profile_picture');
             $table->string('bio');
-            $table->integer('user_type_id');
+            $table->integer('user_type_id')->default(1); // 1 = user, 2 = admin, incase of any error try to add quotations
             $table->timestamps();
             // $table->timestamp('email_verified_at')->nullable();
             // $table->rememberToken();
