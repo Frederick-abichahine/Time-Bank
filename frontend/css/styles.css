@@ -99,7 +99,7 @@ nav{
     min-width: 400px;
     min-height: 80px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* repeated 4 times for the 4 icons within the nav bar */
+    grid-template-columns: repeat(6, 1fr); /* repeated 4 times for the 4 icons within the nav bar */
     border-radius: 10px;
     padding: 0 15px;
     background: #000;
