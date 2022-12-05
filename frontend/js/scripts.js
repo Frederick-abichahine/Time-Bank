@@ -45,5 +45,19 @@ timebank_pages.loadLoginSignup = () => {
         // take to a page that says thank you for signing up, sleep for few seconds and then redirect to home page
         location.assign('../html/index.html')
     })
+}
 
+timebank_pages.loadIndex = () => {
+    const banner = document.getElementById('banner')
+    const moon = document.getElementById('moon')
+    const mountain = document.getElementById('mountain')
+    const title = document.getElementById('title')
+
+    window.addEventListener('scroll', function() {
+        let value = window.scrollY
+        banner.style.bottom = value * 1 + 'px'
+        moon.style.left = -value * 1 + 'px'
+        mountain.style.top = -value * 0.25 + 'px'
+        title.style.top = value * 0.25 + 'px'
+    })
 }
