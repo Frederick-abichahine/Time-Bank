@@ -2,23 +2,18 @@
 <html lang="en">
     <head>
         <title>Time-Bank | Home</title>
-        <link rel="stylesheet" href=""/> <!-- Path: style.css -->
+        <link rel="stylesheet" href="../css/styles.css"/> <!-- Path: style.css -->
     </head>
     <body>
-        <h1 align="center">Welcome to the Time-Bank</h1>
-        <!-- To do: make navigation bar sticky or goes after scrolling down for few seconds -->
-        <header class="nav_bar">
-            <nav class="nav_content">
-                <div class="nav_logo">
-                    Insert logo here
-                </div>
-                <div class="nav_search">
-                    Insert search bar here
-                </div>
-                <div class="nav_search">
-                    Insert clock here
-                </div>
-            </nav>
-        </header>
+        <section>
+            <img src="../assets/dark_bg.png" id="banner">
+            <img src="../assets/moon.png" id="moon">
+            <img src="../assets/mountain.png" id="mountain">
+            <h1 id="title">Time Bank</h1>
+        </section>
+        <script src="../js/scripts.js"></script>
+        <script>
+            timebank_pages.loaderFunction("Index")
+        </script>
     </body>
 </html>
