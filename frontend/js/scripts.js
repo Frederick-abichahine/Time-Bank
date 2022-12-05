@@ -56,7 +56,7 @@ timebank_pages.loadIndex = () => {
     const title = document.getElementById('title')
 
     window.addEventListener('scroll', function() {
-        let value = window.scrollY
+        const value = window.scrollY // value is the number of pixels we have scrolled down (y-axis)
         banner.style.bottom = value * 1 + 'px'
         moon.style.left = -value * 1 + 'px'
         mountain.style.top = -value * 0.25 + 'px'
@@ -104,8 +104,11 @@ timebank_pages.loadIndex = () => {
     const home = document.getElementById('home_btn')
     const profile = document.getElementById('profile_btn')
     const post = document.getElementById('post_btn')
+    const message = document.getElementById('chat_btn')
     const about = document.getElementById('about_btn')
-    const delay = ms => new Promise(res => setTimeout(res,ms))
+    const logout = document.getElementById('logout_btn')
+    const delay = ms => new Promise(res => setTimeout(res,ms)) // delay function
+    const nav = document.getElementById('nav_bar')
 
     home.addEventListener('click', async () => {
         console.log('home button clicked')
@@ -126,5 +129,17 @@ timebank_pages.loadIndex = () => {
         console.log('about button clicked')
         await delay(700)
         location.assign('../html/index.html')
+    })
+
+    message.addEventListener('click', async () => {
+        console.log('message button clicked')
+        await delay(700)
+        location.assign('../html/index.html')
+    })
+
+    logout.addEventListener('click', async () => {
+        console.log('logout button clicked')
+        await delay(700)
+        location.assign('../html/login_signup.html')
     })
 }

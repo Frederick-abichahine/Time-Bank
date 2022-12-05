@@ -81,6 +81,7 @@ Styling the navigation bar
 
 .container{
     /* sizing the container for the nav bar */
+    position: relative;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -95,11 +96,12 @@ Styling the navigation bar
 
 nav{
     /* creating the navigation bar */
-    position: sticky;
+    position: fixed;
     min-width: 400px;
     min-height: 80px;
+    top: 85%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* repeated 4 times for the 4 icons within the nav bar */
+    grid-template-columns: repeat(6, 1fr); /* repeated 6 times for the 6 icons within the nav bar */
     border-radius: 10px;
     padding: 0 15px;
     background: #000;
@@ -109,7 +111,7 @@ nav{
     0 100px 80px #0000000a;
     overflow: hidden;
     color: #fff;
-    z-index: 5;
+    z-index: 50000000;
 }
 
 nav ul{
