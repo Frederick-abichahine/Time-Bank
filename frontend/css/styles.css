@@ -54,4 +54,21 @@ section img{
     pointer-events: none;
 }
 
+/* 
+###############
+Specific styles
+###############
+*/
 
+#title{
+    position: relative;
+    z-index: 1;
+    color: #c4c3ca;
+    font-size: 10em;
+    text-align: center;
+}
+
+#mountain{
+    z-index: 2; 
+    margin-top: 150px;
+}
