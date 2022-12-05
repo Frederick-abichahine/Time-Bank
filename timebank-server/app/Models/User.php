@@ -17,6 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'users'; // This is the table name in the database, it is not required but it is good practice to have it here.
     protected $fillable = [
         'username',
         'email',
