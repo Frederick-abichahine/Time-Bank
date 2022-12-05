@@ -148,3 +148,31 @@ nav ul li a.active i{
     /* gives max opacity to the icon we are at in the nav bar*/
     opacity: 1;
 }
+
+nav .tubelight{
+    /* Styling the tube light effect of navigation bar */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 5px;
+    border-radius: 5px;
+    background: #fff;
+    transition: left 400ms ease;
+    z-index: 10;
+}
+
+nav .light-ray{
+    /* Styling the spotlight effect of navigation bar */
+    position: absolute;
+    left: -30%;
+    top: 5px;
+    width: 160%;
+    height: 80px;
+    background: linear-gradient(to bottom,
+    rgba(255,255,255,0.3) -50%,
+    rgba(255,255,255, 0) 90%);
+    clip-path: polygon(5% 100%, 25% 0px, 75% 0px ,95% 100%);
+    pointer-events: none;
+}
