@@ -18,6 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $table = 'users'; // This is the table name in the database, it is not required but it is good practice to have it here.
+    #set user_type_id to 1 by default
+
     protected $fillable = [
         'username',
         'email',
@@ -26,7 +28,7 @@ class User extends Authenticatable
         'location',
         'profile_picture',
         'bio',
-        'user_type_id',
+        'user_type_id' => 1,
     ];
 
     /**
