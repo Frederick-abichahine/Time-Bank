@@ -3,7 +3,7 @@
 // ##################################
 
 const timebank_pages = {}
-const base_url = "" // will be added later
+const base_url = "localhost:8000/api/"
 
 // ###############
 // Loader Function
@@ -13,9 +13,9 @@ timebank_pages.loaderFunction = (func_name) => {
     eval("timebank_pages.load" + func_name + "()")
   }
 
-// #########
-// Functions
-// #########
+// #######################
+// Login & Signup Function
+// #######################
 
 timebank_pages.loadLoginSignup = () => {
     // Retrieving the login input fields & button
@@ -29,12 +29,22 @@ timebank_pages.loadLoginSignup = () => {
     const signup_password = document.getElementById('signpass')
     const signup_btn = document.getElementById('signbtn')
 
-    login_btn.addEventListener('click', () => {
+    login_btn.addEventListener('click', async() => {
         console.log('Login button clicked')
         l_email = login_email.value
         l_password = login_password.value
         // take to a page to say welcome back, sleep for few seconds and then redirect to the home page
-        location.assign('../html/index.html')
+        const url = base_url + "login"
+        const formData = new FormData();
+        formData.append('email', l_email);
+        formData.append('password', l_password);
+        const resp = await timebank_pages.postAPI(url, formData)
+        if(!resp.data[0]) {
+            //message.innerHTML = "<i><h6 style = \"color: red;\"> Please fill out all information</h6></i>"
+            console.log('Please fill out all information')
+        } else {
+            location.assign('../html/index.html')
+        }
     })
 
     signup_btn.addEventListener('click', () => {
@@ -46,6 +56,10 @@ timebank_pages.loadLoginSignup = () => {
         location.assign('../html/index.html')
     })
 }
+
+// ##################
+// Home Page Function
+// ##################
 
 timebank_pages.loadIndex = () => {
 
@@ -142,4 +156,21 @@ timebank_pages.loadIndex = () => {
         await delay(700)
         location.assign('../html/login_signup.html')
     })
+}
+
+// #############
+// API Functions
+// #############
+
+timebank_pages.postAPI = async(url, data, token=null) => {
+    //use axios to post data to the API
+    try{
+        return await axios.post(url, data, {
+            headers: {
+                "Authentication": token,
+            }
+        })
+    } catch (error) {
+        console.log("error", error)
+    }
 }
