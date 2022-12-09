@@ -194,6 +194,12 @@ Styling the search bar
 
 .search{
     position: fixed;
+    top: -100%;
+    transition: top 0s ease;
+}
+
+.search.scrolled{
+    position: fixed;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);

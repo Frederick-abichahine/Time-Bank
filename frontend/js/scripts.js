@@ -115,17 +115,21 @@ timebank_pages.loadIndex = () => {
     });
 
     let navbar = document.getElementById('nav_bar');
-    // let search = document.getElementById('search');
+    let search = document.getElementById('search');
 
-    // Add an event listener that listens for scroll events
+    // The navigation and search bars will appear after a certain amount of scrolling
     window.addEventListener('scroll', function() {
-        // If the page has been scrolled more than 300px
-        if (window.scrollY > 300) {
-            // Add the .scrolled class to the navbar
+        // If the page has been scrolled more than 300px, the navigation bar will appear
+        if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
         } else {
-            // Otherwise, remove the .scrolled class
             navbar.classList.remove('scrolled');
+        }
+        // If the page has been scrolled more than 500px, the search bar will appear
+        if (window.scrollY > 500) {
+            search.classList.add('scrolled');
+        } else {
+            search.classList.remove('scrolled');
         }
     });
 
