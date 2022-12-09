@@ -111,7 +111,7 @@ nav{
     0 100px 80px #0000000a;
     overflow: hidden;
     color: #fff;
-    z-index: 50000000;
+    z-index: 100000;
 }
 
 nav ul{
@@ -178,3 +178,49 @@ nav .light-ray{
     clip-path: polygon(5% 100%, 25% 0px, 75% 0px ,95% 100%);
     pointer-events: none;
 }
+
+/* 
+######################
+Styling the search bar
+######################
+*/
+
+.search{
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    border: solid 7px #000000;
+    outline: none;
+    border-radius: 35px;
+    transition: all 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255,255,255,0.3);
+    z-index: 100000;
+}
+  
+.search::placeholder {
+    color: #efefef;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+  
+.search:focus::placeholder {
+    opacity: 1;
+}
+  
+.search:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #ffffff;
+}
+  
+.search:focus, .search:not(:placeholder-shown) {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #ffffff;
+}
+  
+  
