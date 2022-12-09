@@ -88,7 +88,7 @@ timebank_pages.loadIndex = () => {
     {
         if (links[index].classList.contains("active"))
         {
-            light.style.left = `${links[index].offsetLeft + light.offsetWidth / 4}px`;
+            light.style.left = `${links[index].offsetLeft + light.offsetWidth}px`;
         }
         link.addEventListener("click", (e) => 
         {
@@ -112,6 +112,21 @@ timebank_pages.loadIndex = () => {
             }, 50);
             light.style.left = `${e.target.offsetLeft + light.offsetWidth / 4}px`;
         });
+    });
+
+    let navbar = document.getElementById('nav_bar');
+    // let search = document.getElementById('search');
+
+    // Add an event listener that listens for scroll events
+    window.addEventListener('scroll', function() {
+        // If the page has been scrolled more than 300px
+        if (window.scrollY > 300) {
+            // Add the .scrolled class to the navbar
+            navbar.classList.add('scrolled');
+        } else {
+            // Otherwise, remove the .scrolled class
+            navbar.classList.remove('scrolled');
+        }
     });
 
     // Going to the appropriate page upon click
@@ -156,6 +171,8 @@ timebank_pages.loadIndex = () => {
         await delay(700)
         location.assign('../html/login_signup.html')
     })
+
+    
 }
 
 // #############
