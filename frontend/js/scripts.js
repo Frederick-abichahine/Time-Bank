@@ -126,7 +126,7 @@ timebank_pages.loadIndex = () => {
             navbar.classList.remove('scrolled');
         }
         // If the page has been scrolled more than 500px, the search bar will appear
-        if (window.scrollY > 500) {
+        if (window.scrollY > 550) {
             search.classList.add('scrolled');
         } else {
             search.classList.remove('scrolled');
