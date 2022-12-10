@@ -167,7 +167,7 @@ timebank_pages.loadIndex = () => {
     message.addEventListener('click', async () => {
         console.log('message button clicked')
         await delay(700)
-        location.assign('../html/index.html')
+        location.assign('../html/messages.html')
     })
 
     logout.addEventListener('click', async () => {
@@ -177,6 +177,14 @@ timebank_pages.loadIndex = () => {
     })
 
     
+}
+
+// ######################
+// Messages Page Function
+// ######################
+
+timebank_pages.loadMessages = () => {
+    console.log('messages page loaded')
 }
 
 // #############
