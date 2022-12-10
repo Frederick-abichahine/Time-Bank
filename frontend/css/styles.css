@@ -19,7 +19,7 @@ General styles
 }
 
 body{
-    background: #1f2029;
+    background: #151515;
     min-height: 1500px;
 }
 
@@ -40,8 +40,8 @@ section::before{
     bottom: 0;
     width: 100%;
     height: 100px;
-    background: linear-gradient(to top, #1f2029, transparent);
-    z-index: 10000; 
+    background: linear-gradient(to top, #151515, transparent);
+    z-index: 3; 
 }
 
 section img{
@@ -63,7 +63,7 @@ Specific styles
 #title{
     position: relative;
     z-index: 1;
-    color: #c4c3ca;
+    color: #cecece;
     font-size: 10em;
     text-align: center;
     cursor: default;
@@ -118,7 +118,7 @@ Styling the navigation bar
     0 100px 80px #0000000a;
     overflow: hidden;
     color: #fff;
-    z-index: 100000;
+    z-index: 5;
 }
 
 .nav_bar ul{
@@ -169,7 +169,7 @@ Styling the navigation bar
     border-radius: 5px;
     background: #fff;
     transition: left 400ms ease;
-    z-index: 10;
+    z-index: 5;
 }
 
 .nav_bar .light-ray{
@@ -180,8 +180,8 @@ Styling the navigation bar
     width: 160%;
     height: 80px;
     background: linear-gradient(to bottom,
-    rgba(255,255,255,0.3) -50%,
-    rgba(255,255,255, 0) 90%);
+    #ffffff4d -50%,
+    #ffffff00 90%);
     clip-path: polygon(5% 100%, 25% 0px, 75% 0px ,95% 100%);
     pointer-events: none;
 }
@@ -213,8 +213,8 @@ Styling the search bar
     outline: none;
     border-radius: 35px;
     transition: all 0.5s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255,255,255,0.3);
-    z-index: 100000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #ffffff4d;
+    z-index: 5;
 }
   
 .search::placeholder {
@@ -235,5 +235,23 @@ Styling the search bar
     width: 250px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #ffffff;
 }
-  
-  
+
+/*
+######################
+Styling the post cards
+######################
+ */
+
+.post {
+    width: 40%;
+    height: 200px;
+    margin: 100px auto;
+    background-color: green;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: space-be;
+}

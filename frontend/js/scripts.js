@@ -120,7 +120,7 @@ timebank_pages.loadIndex = () => {
     // The navigation and search bars will appear after a certain amount of scrolling
     window.addEventListener('scroll', function() {
         // If the page has been scrolled more than 300px, the navigation bar will appear
-        if (window.scrollY > 100) {
+        if (window.scrollY > 300) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
