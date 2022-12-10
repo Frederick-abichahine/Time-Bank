@@ -88,7 +88,7 @@ timebank_pages.loadIndex = () => {
     {
         if (links[index].classList.contains("active"))
         {
-            light.style.left = `${links[index].offsetLeft + light.offsetWidth}px`;
+            light.style.left = `50px`;
         }
         link.addEventListener("click", (e) => 
         {
@@ -185,6 +185,86 @@ timebank_pages.loadIndex = () => {
 
 timebank_pages.loadMessages = () => {
     console.log('messages page loaded')
+
+    // Navigation Bar With Spotlight Effect
+    const uls = document.querySelectorAll("nav ul");
+    const links = [...document.querySelectorAll("nav a")];
+    const light = document.querySelector("nav .tubelight");
+    let activeIndex = 0;
+    let currentIndex = 0;
+    let increment = 1;
+    links.forEach((link, index) => 
+    {
+        if (links[index].classList.contains("active"))
+        {
+            light.style.left = `250px`;
+        }
+        link.addEventListener("click", (e) => 
+        {
+            activeIndex = index;
+            let t = setInterval(() => 
+            {
+                if (activeIndex > currentIndex) increment = 1;
+                else if (activeIndex < currentIndex) increment = -1;
+                currentIndex += increment;
+
+                links[currentIndex].classList.add("active");
+                if (currentIndex != -1)
+                    links[currentIndex - increment].classList.remove("active");
+
+                if (currentIndex == activeIndex) 
+                {
+                    e.target.classList.add("active");
+                    increment = 0;
+                    clearInterval(t);
+                }
+            }, 50);
+            light.style.left = `${e.target.offsetLeft + light.offsetWidth / 4}px`;
+        });
+    });
+
+    // Going to the appropriate page upon click
+    const home = document.getElementById('home_btn')
+    const profile = document.getElementById('profile_btn')
+    const post = document.getElementById('post_btn')
+    const message = document.getElementById('chat_btn')
+    const about = document.getElementById('about_btn')
+    const logout = document.getElementById('logout_btn')
+    const delay = ms => new Promise(res => setTimeout(res,ms)) // delay function
+    const nav = document.getElementById('nav_bar')
+
+    home.addEventListener('click', async () => {
+        console.log('home button clicked')
+        await delay(700) // adding a small delay for the animation to take place
+        location.assign('../html/index.html')
+    })
+    profile.addEventListener('click', async () => {
+        console.log('profile button clicked')
+        await delay(700)
+        location.assign('../html/index.html')
+    })
+    post.addEventListener('click', async () => {
+        console.log('post button clicked')
+        await delay(700)
+        location.assign('../html/index.html')
+    })
+    about.addEventListener('click', async () => {
+        console.log('about button clicked')
+        await delay(700)
+        location.assign('../html/index.html')
+    })
+
+    message.addEventListener('click', async () => {
+        console.log('message button clicked')
+        await delay(700)
+        location.assign('../html/messages.html')
+    })
+
+    logout.addEventListener('click', async () => {
+        console.log('logout button clicked')
+        await delay(700)
+        location.assign('../html/login_signup.html')
+    })
 }
 
 // #############
