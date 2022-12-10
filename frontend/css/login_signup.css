@@ -33,7 +33,7 @@ Styling clickables
 }
 
 .link:hover{
-  color: #71d0e5;
+  color: #134a57;
 }
 
 a{
@@ -115,7 +115,7 @@ Styling checkboxes
   height: 36px;
   border-radius: 50%;
   color: #ffffff;
-  background-color: #71d0e5;
+  background-color: #134a57;
   font-family: 'unicons';
   content: '\eb4f';
   z-index: 20;
@@ -228,7 +228,7 @@ Styling the input fields
   letter-spacing: 0.5px;
   outline: none;
   color: #ffffff;
-  background-color: #494949;
+  background-color: #6b6b6b;
   border: none;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
@@ -251,7 +251,7 @@ Styling the input fields
   font-size: 24px;
   line-height: 48px;
   text-align: left;
-  color: #71d0e5;
+  color: #134a57;
   -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
@@ -302,7 +302,7 @@ Styling the submit button
   justify-content: center;
   text-align: center;
   border: none;
-  background-image: linear-gradient(to left bottom, #c8edf6, #71d0e5, #c8edf6);
+  background-image: linear-gradient(to left bottom, #84ddf1, #134a57, #84ddf1);
   color: #ffffff;
   box-shadow: 0 8px 24px 0 rgba(255, 255, 255, 0.2);
 }
@@ -310,7 +310,7 @@ Styling the submit button
 
 .btn:active, .btn:focus, .btn:hover{  
   /* styling the submit button when it is active */
-  background-image: linear-gradient(to left bottom, #1e839a, #71d0e5, #1e839a);
+  background-image: linear-gradient(to left bottom, #134a57, #84ddf1, #134a57);
   color: #000000;
   box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
 }
@@ -326,10 +326,10 @@ Animating background with rotating squares
   width: 60px;
   height: 60px;
   background-color: transparent;
-  border: 6px solid #71d0e5;
+  border: 6px solid #134a57;
   text-align: center;
   align-items: center;
-  color: #71d0e5;;
+  color: #ffffff;;
   justify-content: center;
   display: flex;
 }
