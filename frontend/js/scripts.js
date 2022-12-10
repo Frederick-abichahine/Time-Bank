@@ -77,47 +77,12 @@ timebank_pages.loadIndex = () => {
         title.style.top = value * 0.25 + 'px'
     })
 
-    // Navigation Bar With Spotlight Effect
-    const uls = document.querySelectorAll("nav ul");
-    const links = [...document.querySelectorAll("nav a")];
-    const light = document.querySelector("nav .tubelight");
-    let activeIndex = 0;
-    let currentIndex = 0;
-    let increment = 1;
-    links.forEach((link, index) => 
-    {
-        if (links[index].classList.contains("active"))
-        {
-            light.style.left = `50px`;
-        }
-        link.addEventListener("click", (e) => 
-        {
-            activeIndex = index;
-            let t = setInterval(() => 
-            {
-                if (activeIndex > currentIndex) increment = 1;
-                else if (activeIndex < currentIndex) increment = -1;
-                currentIndex += increment;
-
-                links[currentIndex].classList.add("active");
-                if (currentIndex != -1)
-                    links[currentIndex - increment].classList.remove("active");
-
-                if (currentIndex == activeIndex) 
-                {
-                    e.target.classList.add("active");
-                    increment = 0;
-                    clearInterval(t);
-                }
-            }, 50);
-            light.style.left = `${e.target.offsetLeft + light.offsetWidth / 4}px`;
-        });
-    });
-
-    let navbar = document.getElementById('nav_bar');
-    let search = document.getElementById('search');
+    // Calling funtion to display working and appropriate navigation bar
+    timebank_pages.loadNav(50); // 50px will be the starting position of the spotlight
 
     // The navigation and search bars will appear after a certain amount of scrolling
+    let navbar = document.getElementById('nav_bar');
+    let search = document.getElementById('search');
     window.addEventListener('scroll', function() {
         // If the page has been scrolled more than 300px, the navigation bar will appear
         if (window.scrollY > 300) {
@@ -131,52 +96,7 @@ timebank_pages.loadIndex = () => {
         } else {
             search.classList.remove('scrolled');
         }
-    });
-
-    // Going to the appropriate page upon click
-    const home = document.getElementById('home_btn')
-    const profile = document.getElementById('profile_btn')
-    const post = document.getElementById('post_btn')
-    const message = document.getElementById('chat_btn')
-    const about = document.getElementById('about_btn')
-    const logout = document.getElementById('logout_btn')
-    const delay = ms => new Promise(res => setTimeout(res,ms)) // delay function
-    const nav = document.getElementById('nav_bar')
-
-    home.addEventListener('click', async () => {
-        console.log('home button clicked')
-        await delay(700) // adding a small delay for the animation to take place
-        location.assign('../html/index.html')
-    })
-    profile.addEventListener('click', async () => {
-        console.log('profile button clicked')
-        await delay(700)
-        location.assign('../html/index.html')
-    })
-    post.addEventListener('click', async () => {
-        console.log('post button clicked')
-        await delay(700)
-        location.assign('../html/index.html')
-    })
-    about.addEventListener('click', async () => {
-        console.log('about button clicked')
-        await delay(700)
-        location.assign('../html/index.html')
-    })
-
-    message.addEventListener('click', async () => {
-        console.log('message button clicked')
-        await delay(700)
-        location.assign('../html/messages.html')
-    })
-
-    logout.addEventListener('click', async () => {
-        console.log('logout button clicked')
-        await delay(700)
-        location.assign('../html/login_signup.html')
-    })
-
-    
+    }); 
 }
 
 // ######################
@@ -185,7 +105,15 @@ timebank_pages.loadIndex = () => {
 
 timebank_pages.loadMessages = () => {
     console.log('messages page loaded')
+    // Calling funtion to display working and appropriate navigation bar
+    timebank_pages.loadNav(250); // 250px will be the starting position of the spotlight
+}
 
+// #######################
+// Navigation Bar Function
+// #######################
+
+timebank_pages.loadNav = (px) => { // px is the starting position of the spotlight
     // Navigation Bar With Spotlight Effect
     const uls = document.querySelectorAll("nav ul");
     const links = [...document.querySelectorAll("nav a")];
@@ -197,7 +125,7 @@ timebank_pages.loadMessages = () => {
     {
         if (links[index].classList.contains("active"))
         {
-            light.style.left = `250px`;
+            light.style.left = px+'px';
         }
         link.addEventListener("click", (e) => 
         {
