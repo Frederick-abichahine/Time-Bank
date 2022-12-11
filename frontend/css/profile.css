@@ -159,17 +159,17 @@ Styling the profile card
     /* creating the profile card */
     position: relative;
     width: 450px;
-    height: 200px;
+    /* height: 200px; */
+    height: 500px;
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 35px 80px #0000001f;
-    transition: 0.5s; /* to give the card a slight delay effect when shrinking back*/
+    transition: 0.5s; /* to give the card a slight delay effect when expanding and shrinking back*/
 }
 
 .card:hover{
-    /* to give the card a slight delay effect when expanding after being hovered on */
+    /* expanding card after hover */
     height: 500px;
-    transition: 0.5s;
 }
 
 .profile-pic{
@@ -183,4 +183,23 @@ Styling the profile card
     background: #ffffff;
     border-radius: 100%;
     box-shadow: 0 15px 50px #0000001f;
+    overflow: hidden;
+    transition: 0.5s; /* to give the profile picture a slight delay effect expanding and shrinking with the box*/
+}
+
+.profile-pic img{
+    /* to remove the border around the profile picture */
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+
+}
+
+.card:hover .profile-pic{
+    width: 250px;
+    height: 250px;
 }
