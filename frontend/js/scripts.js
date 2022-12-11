@@ -180,7 +180,7 @@ timebank_pages.loadNav = (px) => { // px is the starting position of the spotlig
     profile.addEventListener('click', async () => {
         console.log('profile button clicked')
         await delay(700)
-        location.assign('../html/index.html')
+        location.assign('../html/profile.html')
     })
     post.addEventListener('click', async () => {
         console.log('post button clicked')
