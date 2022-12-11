@@ -110,6 +110,16 @@ timebank_pages.loadMessages = () => {
     timebank_pages.loadNav(250); // 250px will be the starting position of the spotlight
 }
 
+// #####################
+// Profile Page Function
+// #####################
+
+timebank_pages.loadProfile = () => {
+    console.log('profile page loaded')
+    // Calling funtion to display working and appropriate navigation bar
+    timebank_pages.loadNav(118); // 118px will be the starting position of the spotlight
+}
+
 // #######################
 // Navigation Bar Function
 // #######################
