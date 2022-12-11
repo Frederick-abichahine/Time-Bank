@@ -1,3 +1,17 @@
+/* 
+###############
+Importing fonts
+###############
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+/* 
+##############
+General styles
+##############
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +23,20 @@ body{
     min-height: 1500px;
 }
 
+#title{
+    position: relative;
+    z-index: 1;
+    color: #cecece;
+    font-size: 5em;
+    text-align: center;
+    cursor: default;
+}
+
+/* 
+##########################
+Styling the navigation bar
+##########################
+*/
 
 .container{
     /* sizing the container for the nav bar */

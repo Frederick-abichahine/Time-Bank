@@ -35,16 +35,17 @@ timebank_pages.loadLoginSignup = () => {
         l_password = login_password.value
         // take to a page to say welcome back, sleep for few seconds and then redirect to the home page
         const url = base_url + "login"
+        // const resp = await timebank_pages.getAPI(url)
         const formData = new FormData();
         formData.append('email', l_email);
         formData.append('password', l_password);
         const resp = await timebank_pages.postAPI(url, formData)
-        if(!resp.data[0]) {
-            //message.innerHTML = "<i><h6 style = \"color: red;\"> Please fill out all information</h6></i>"
-            console.log('Please fill out all information')
-        } else {
-            location.assign('../html/index.html')
-        }
+        // if(!resp.data[0]) {
+        //     //message.innerHTML = "<i><h6 style = \"color: red;\"> Please fill out all information</h6></i>"
+        //     console.log('Please fill out all information')
+        // } else {
+        //     location.assign('../html/index.html')
+        // }
     })
 
     signup_btn.addEventListener('click', () => {
@@ -198,6 +199,15 @@ timebank_pages.loadNav = (px) => { // px is the starting position of the spotlig
 // #############
 // API Functions
 // #############
+
+timebank_pages.getAPI = async(url) => {
+    //use axios to get data from the API
+    try{
+        return await axios(url);
+    } catch (error) {
+        console.log("error", error)
+    }
+}
 
 timebank_pages.postAPI = async(url, data, token=null) => {
     //use axios to post data to the API
