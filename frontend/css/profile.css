@@ -5,6 +5,7 @@ Importing fonts
 */
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 
 /* 
 ##############
@@ -16,11 +17,13 @@ General styles
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    /* box-sizing: border-box; */
 }
 
 body{
     background: #151515;
-    min-height: 1500px;
+    /* min-height: 100vh; */
+    justify-content: center;
 }
 
 #title{
@@ -136,4 +139,32 @@ Styling the navigation bar
     #ffffff00 90%);
     clip-path: polygon(5% 100%, 25% 0px, 75% 0px ,95% 100%);
     pointer-events: none;
+}
+
+/* 
+########################
+Styling the profile card
+########################
+*/
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: -100vh;
+}
+
+.card{
+    position: relative;
+    width: 450px;
+    height: 200px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px #0000001f;
+    transition: 0.5s; /* to give the card a slight delay effect when shrinking back*/
+}
+
+.card:hover{
+    height: 500px;
+    transition: 0.5s; /* to give the card a slight delay effect when expanding */
 }
