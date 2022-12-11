@@ -240,3 +240,18 @@ Styling the profile card
     display: block;
     margin-top: 5px;
 }
+
+.card .profile-content .details .more-info{
+    /* styling the more info within the profile card */
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px 0;   
+}
+
+.card .profile-content .details .more-info h3{
+    /* styling the headers of more info within the profile card */
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5em;
+    font-weight: 600;
+}
