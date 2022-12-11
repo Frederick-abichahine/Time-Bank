@@ -159,8 +159,7 @@ Styling the profile card
     /* creating the profile card */
     position: relative;
     width: 450px;
-    /* height: 200px; */
-    height: 500px;
+    height: 200px;
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 35px 80px #0000001f;
@@ -200,8 +199,8 @@ Styling the profile card
 
 .card:hover .profile-pic{
     /* expanding profile picture after hover */
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
 }
 
 .card .profile-content{
@@ -244,8 +243,8 @@ Styling the profile card
 .card .profile-content .details .more-info{
     /* styling the more info within the profile card */
     display: flex;
-    justify-content: space-evenly;
-    margin: 40px 0;   
+    justify-content: space-between;
+    margin: 40px 0;  
 }
 
 .card .profile-content .details .more-info h3{
@@ -254,4 +253,21 @@ Styling the profile card
     color: #555;
     line-height: 1.5em;
     font-weight: 600;
+}
+
+.card .profile-content .details .edit-profile{
+    display: flex;
+    justify-content: center;
+}
+
+.card .profile-content .details .edit-profile button{
+    cursor: pointer;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    background: #0f5d69;
+    color: #ffffff;
 }
