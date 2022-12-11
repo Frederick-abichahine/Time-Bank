@@ -148,6 +148,7 @@ Styling the profile card
 */
 
 .card-container{
+    /* sizing the container for the profile card */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,6 +156,7 @@ Styling the profile card
 }
 
 .card{
+    /* creating the profile card */
     position: relative;
     width: 450px;
     height: 200px;
@@ -165,6 +167,20 @@ Styling the profile card
 }
 
 .card:hover{
+    /* to give the card a slight delay effect when expanding after being hovered on */
     height: 500px;
-    transition: 0.5s; /* to give the card a slight delay effect when expanding */
+    transition: 0.5s;
+}
+
+.profile-pic{
+    /* styling the profile picture */
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    left: 225px;
+    top: -45px;
+    transform: translate(-50%);
+    background: #ffffff;
+    border-radius: 100%;
+    box-shadow: 0 15px 50px #0000001f;
 }
