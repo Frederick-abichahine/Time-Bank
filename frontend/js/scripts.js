@@ -3,7 +3,7 @@
 // ##################################
 
 const timebank_pages = {}
-const base_url = "http://localhost:8000/api/"
+const base_url = "http://localhost:8000/api/v0.1/"
 
 // ###############
 // Loader Function
@@ -45,11 +45,14 @@ timebank_pages.loadLoginSignup = () => {
         // } else {
         //     location.assign('../html/index.html')
         // }
-        if (resp.data.data.email == 'fred'){
-            location.assign('../html/index.html')
-        }
-        else{
-            console.log('Bad bad')
+        if (resp.data.status == "failed"){
+            console.log("Some fileds are empty")
+        } else if(resp.data.status == "success"){
+            console.log("Login successful")
+        } else if(resp.data.status == "user not found"){
+            console.log("User not found")
+        } else{
+            console.log("something went wrong")
         }
     })
 
