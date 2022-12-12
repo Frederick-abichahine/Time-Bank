@@ -33,13 +33,12 @@ timebank_pages.loadLoginSignup = () => {
         console.log('Login button clicked')
         l_email = login_email.value
         l_password = login_password.value
-        // take to a page to say welcome back, sleep for few seconds and then redirect to the home page
-        const url = base_url + "login"
-        const resp = await timebank_pages.getAPI(url)
-        // const formData = new FormData();
-        // formData.append('email', l_email);
-        // formData.append('password', l_password);
-        // const resp = await timebank_pages.postAPI(url, formData)
+        const url = base_url + "login2"
+        // const resp = await timebank_pages.getAPI(url)
+        const formData = new FormData();
+        formData.append('email', l_email);
+        formData.append('password', l_password);
+        const resp = await timebank_pages.postAPI(url, formData)
         // if(!resp.data[0]) {
         //     //message.innerHTML = "<i><h6 style = \"color: red;\"> Please fill out all information</h6></i>"
         //     console.log('Please fill out all information')
@@ -53,7 +52,6 @@ timebank_pages.loadLoginSignup = () => {
         s_username = signup_username.value
         s_email = signup_email.value
         s_password = signup_password.value
-        // take to a page that says thank you for signing up, sleep for few seconds and then redirect to home page
         location.assign('../html/index.html')
     })
 }
