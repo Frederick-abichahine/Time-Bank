@@ -8,5 +8,6 @@ use App\Http\Controllers\User\UserController;
 //     return $request->user();
 // });
 
-Route::post('login', [UserController::class, 'login']);
-Route::get('login2', [UserController::class, 'login2']);
+Route::group(['prefix' => 'v0.1'], function () {
+    Route::post('login', [UserController::class, 'login']);
+});
