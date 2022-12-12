@@ -118,6 +118,12 @@ timebank_pages.loadProfile = () => {
     console.log('profile page loaded')
     // Calling funtion to display working and appropriate navigation bar
     timebank_pages.loadNav(118); // 118px will be the starting position of the spotlight
+    const edit_btn = document.getElementById('edit-profile-btn')
+    edit_btn.addEventListener('click', () => {
+        console.log('edit button clicked')
+        location.assign('../html/profile.html') // To fix: takes to the edit profile page
+    })
+    
 }
 
 // #######################
