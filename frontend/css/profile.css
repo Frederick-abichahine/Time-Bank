@@ -271,11 +271,13 @@ Styling the profile card
     font-weight: 500;
     background-image: linear-gradient(to left bottom, #84ddf1, #134a57, #84ddf1);
     color: #ffffff;
+    box-shadow: 0 8px 24px 0 rgba(255, 255, 255, 0.2);
 }
 
 .card .profile-content .details .edit-profile button:hover{
     background-image: linear-gradient(to left bottom, #134a57, #84ddf1, #134a57);
     color: #000000;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
 }
 
 /*
