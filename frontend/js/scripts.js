@@ -3,7 +3,7 @@
 // ##################################
 
 const timebank_pages = {}
-const base_url = "localhost:8000/api/"
+const base_url = "http://localhost:8000/api/"
 
 // ###############
 // Loader Function
@@ -33,7 +33,7 @@ timebank_pages.loadLoginSignup = () => {
         console.log('Login button clicked')
         l_email = login_email.value
         l_password = login_password.value
-        const url = base_url + "login2"
+        const url = base_url + "login"
         // const resp = await timebank_pages.getAPI(url)
         const formData = new FormData();
         formData.append('email', l_email);
@@ -45,6 +45,12 @@ timebank_pages.loadLoginSignup = () => {
         // } else {
         //     location.assign('../html/index.html')
         // }
+        if (resp.data.data.email == 'fred'){
+            location.assign('../html/index.html')
+        }
+        else{
+            console.log('Bad bad')
+        }
     })
 
     signup_btn.addEventListener('click', () => {
@@ -234,4 +240,19 @@ timebank_pages.postAPI = async(url, data, token=null) => {
     } catch (error) {
         console.log("error", error)
     }
+    // fetch(url, {
+    //     method: 'POST',
+    //     mode: 'cors',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         data: 'some data'
+    //     })
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // do something with the response data
+    //     });
+
 }
