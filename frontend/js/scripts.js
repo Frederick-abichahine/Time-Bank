@@ -39,20 +39,20 @@ timebank_pages.loadLoginSignup = () => {
         formData.append('email', l_email);
         formData.append('password', l_password);
         const resp = await timebank_pages.postAPI(url, formData)
-        // if(!resp.data[0]) {
-        //     //message.innerHTML = "<i><h6 style = \"color: red;\"> Please fill out all information</h6></i>"
-        //     console.log('Please fill out all information')
-        // } else {
-        //     location.assign('../html/index.html')
-        // }
+        const message = document.getElementById('display-message')
+
         if (resp.data.status == "failed"){
-            console.log("Some fileds are empty")
-        } else if(resp.data.status == "success"){
-            console.log("Login successful")
-        } else if(resp.data.status == "user not found"){
-            console.log("User not found")
-        } else{
-            console.log("something went wrong")
+            message.innerHTML = "<i><h6 style = \"color: red;\"> Please Fill All Fields</h6></i>"
+        } 
+        else if(resp.data.status == "user not found"){
+            message.innerHTML = "<i><h6 style = \"color: red;\"> Invalid Credentials</h6></i>"
+        } 
+        else if(resp.data.status == "success"){
+            message.innerHTML = "<i><h6 style = \"color: green;\"> Success</h6></i>"
+            location.assign('../html/index.html')
+        } 
+        else{
+            message.innerHTML = "<i><h6 style = \"color: red;\"> Uh oh! Something Went Wrong</h6></i>"
         }
     })
 
