@@ -10,4 +10,5 @@ use App\Http\Controllers\User\UserController;
 
 Route::group(['prefix' => 'v0.1'], function () {
     Route::post('login', [UserController::class, 'login']);
+    Route::post('signup', [UserController::class, 'signup']);
 });

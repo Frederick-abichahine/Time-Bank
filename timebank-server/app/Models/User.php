@@ -27,7 +27,7 @@ class User extends Authenticatable
         'location',
         'profile_picture',
         'description',
-        'user_type_id' => 1,
+        'user_type_id',
     ];
 
     /**
