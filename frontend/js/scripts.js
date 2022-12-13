@@ -22,46 +22,65 @@ timebank_pages.loadLoginSignup = () => {
     const login_email = document.getElementById('logemail')
     const login_password = document.getElementById('logpass')
     const login_btn = document.getElementById('logbtn')
+    const l_message = document.getElementById('display-message-login')
 
     // Retrieving the signup input fields & button
     const signup_username = document.getElementById('signname')
     const signup_email = document.getElementById('signemail')
     const signup_password = document.getElementById('signpass')
     const signup_btn = document.getElementById('signbtn')
+    const s_message = document.getElementById('display-message-signup')
 
+    // Post API Function when the login button is clicked
     login_btn.addEventListener('click', async() => {
-        console.log('Login button clicked')
-        l_email = login_email.value
-        l_password = login_password.value
-        const url = base_url + "login"
-        // const resp = await timebank_pages.getAPI(url)
-        const formData = new FormData();
-        formData.append('email', l_email);
-        formData.append('password', l_password);
-        const resp = await timebank_pages.postAPI(url, formData)
-        const message = document.getElementById('display-message')
+        const l_email = login_email.value
+        const l_password = login_password.value
+        const l_url = base_url + "login"
+        const l_formData = new FormData()
+        l_formData.append('email', l_email)
+        l_formData.append('password', l_password)
+        const l_resp = await timebank_pages.postAPI(l_url, l_formData)
 
-        if (resp.data.status == "failed"){
-            message.innerHTML = "<i><h6 style = \"color: red;\"> Please Fill All Fields</h6></i>"
+        if (l_resp.data.status == "failed"){
+            l_message.innerHTML = "<i><h6 style = \"color: red;\"> Please Fill All Fields</h6></i>"
         } 
-        else if(resp.data.status == "user not found"){
-            message.innerHTML = "<i><h6 style = \"color: red;\"> Invalid Credentials</h6></i>"
+        else if(l_resp.data.status == "user not found"){
+            l_message.innerHTML = "<i><h6 style = \"color: red;\"> Invalid Credentials</h6></i>"
         } 
-        else if(resp.data.status == "success"){
-            message.innerHTML = "<i><h6 style = \"color: green;\"> Success</h6></i>"
+        else if(l_resp.data.status == "success"){
+            l_message.innerHTML = "<i><h6 style = \"color: green;\"> Success</h6></i>"
             location.assign('../html/index.html')
         } 
         else{
-            message.innerHTML = "<i><h6 style = \"color: red;\"> Uh oh! Something Went Wrong</h6></i>"
+            l_message.innerHTML = "<i><h6 style = \"color: red;\"> Uh oh! Something Went Wrong</h6></i>"
         }
     })
 
-    signup_btn.addEventListener('click', () => {
-        console.log('Signup button clicked')
-        s_username = signup_username.value
-        s_email = signup_email.value
-        s_password = signup_password.value
-        location.assign('../html/index.html')
+    // Post API Function when the signup button is clicked
+    signup_btn.addEventListener('click', async() => {
+        const s_username = signup_username.value
+        const s_email = signup_email.value
+        const s_password = signup_password.value
+        const s_url = base_url + "signup"
+        const s_formData = new FormData()
+        s_formData.append('username', s_username)
+        s_formData.append('email', s_email)
+        s_formData.append('password', s_password)
+        const s_resp = await timebank_pages.postAPI(s_url, s_formData)
+
+        if (s_resp.data.status == "failed"){
+            s_message.innerHTML = "<i><h6 style = \"color: red;\"> Please Fill All Fields</h6></i>"
+        } 
+        else if(s_resp.data.status == "email already exists"){
+            s_message.innerHTML = "<i><h6 style = \"color: red;\"> Email Already Exists</h6></i>"
+        } 
+        else if(s_resp.data.status == "success"){
+            s_message.innerHTML = "<i><h6 style = \"color: green;\"> Success</h6></i>"
+            // location.assign('../html/index.html')
+        } 
+        else{
+            s_message.innerHTML = "<i><h6 style = \"color: red;\"> Uh oh! Something Went Wrong</h6></i>"
+        }
     })
 }
 
@@ -86,25 +105,25 @@ timebank_pages.loadIndex = () => {
     })
 
     // Calling funtion to display working and appropriate navigation bar
-    timebank_pages.loadNav(50); // 50px will be the starting position of the spotlight
+    timebank_pages.loadNav(50) // 50px will be the starting position of the spotlight
 
     // The navigation and search bars will appear after a certain amount of scrolling
-    let navbar = document.getElementById('nav_bar');
-    let search = document.getElementById('search');
+    let navbar = document.getElementById('nav_bar')
+    let search = document.getElementById('search')
     window.addEventListener('scroll', function() {
         // If the page has been scrolled more than 300px, the navigation bar will appear
         if (window.scrollY > 300) {
-            navbar.classList.add('scrolled');
+            navbar.classList.add('scrolled')
         } else {
-            navbar.classList.remove('scrolled');
+            navbar.classList.remove('scrolled')
         }
         // If the page has been scrolled more than 500px, the search bar will appear
         if (window.scrollY > 550) {
-            search.classList.add('scrolled');
+            search.classList.add('scrolled')
         } else {
-            search.classList.remove('scrolled');
+            search.classList.remove('scrolled')
         }
-    }); 
+    })
 }
 
 // ######################
@@ -114,7 +133,7 @@ timebank_pages.loadIndex = () => {
 timebank_pages.loadMessages = () => {
     console.log('messages page loaded')
     // Calling funtion to display working and appropriate navigation bar
-    timebank_pages.loadNav(250); // 250px will be the starting position of the spotlight
+    timebank_pages.loadNav(250) // 250px will be the starting position of the spotlight
 }
 
 // #####################
@@ -124,7 +143,7 @@ timebank_pages.loadMessages = () => {
 timebank_pages.loadProfile = () => {
     console.log('profile page loaded')
     // Calling funtion to display working and appropriate navigation bar
-    timebank_pages.loadNav(118); // 118px will be the starting position of the spotlight
+    timebank_pages.loadNav(118) // 118px will be the starting position of the spotlight
     const edit_btn = document.getElementById('edit-profile-btn')
     edit_btn.addEventListener('click', () => {
         console.log('edit button clicked')
@@ -139,41 +158,41 @@ timebank_pages.loadProfile = () => {
 
 timebank_pages.loadNav = (px) => { // px is the starting position of the spotlight
     // Navigation Bar With Spotlight Effect
-    const uls = document.querySelectorAll("nav ul");
-    const links = [...document.querySelectorAll("nav a")];
-    const light = document.querySelector("nav .tubelight");
-    let activeIndex = 0;
-    let currentIndex = 0;
-    let increment = 1;
+    const uls = document.querySelectorAll("nav ul")
+    const links = [...document.querySelectorAll("nav a")]
+    const light = document.querySelector("nav .tubelight")
+    let activeIndex = 0
+    let currentIndex = 0
+    let increment = 1
     links.forEach((link, index) => 
     {
         if (links[index].classList.contains("active"))
         {
-            light.style.left = px+'px';
+            light.style.left = px+'px'
         }
         link.addEventListener("click", (e) => 
         {
-            activeIndex = index;
+            activeIndex = index
             let t = setInterval(() => 
             {
-                if (activeIndex > currentIndex) increment = 1;
-                else if (activeIndex < currentIndex) increment = -1;
-                currentIndex += increment;
+                if (activeIndex > currentIndex) increment = 1
+                else if (activeIndex < currentIndex) increment = -1
+                currentIndex += increment
 
-                links[currentIndex].classList.add("active");
+                links[currentIndex].classList.add("active")
                 if (currentIndex != -1)
-                    links[currentIndex - increment].classList.remove("active");
+                    links[currentIndex - increment].classList.remove("active")
 
                 if (currentIndex == activeIndex) 
                 {
-                    e.target.classList.add("active");
-                    increment = 0;
-                    clearInterval(t);
+                    e.target.classList.add("active")
+                    increment = 0
+                    clearInterval(t)
                 }
-            }, 50);
-            light.style.left = `${e.target.offsetLeft + light.offsetWidth / 4}px`;
-        });
-    });
+            }, 50)
+            light.style.left = `${e.target.offsetLeft + light.offsetWidth / 4}px`
+        })
+    })
 
     // Going to the appropriate page upon click
     const home = document.getElementById('home_btn')
@@ -224,16 +243,16 @@ timebank_pages.loadNav = (px) => { // px is the starting position of the spotlig
 // #############
 
 timebank_pages.getAPI = async(url) => {
-    //use axios to get data from the API
+    //using axios to get data
     try{
-        return await axios(url);
+        return await axios(url)
     } catch (error) {
         console.log("error", error)
     }
 }
 
 timebank_pages.postAPI = async(url, data, token=null) => {
-    //use axios to post data to the API
+    //using axios to post data
     try{
         return await axios.post(url, data, {
             headers: {
@@ -243,19 +262,4 @@ timebank_pages.postAPI = async(url, data, token=null) => {
     } catch (error) {
         console.log("error", error)
     }
-    // fetch(url, {
-    //     method: 'POST',
-    //     mode: 'cors',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //         data: 'some data'
-    //     })
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         // do something with the response data
-    //     });
-
 }
