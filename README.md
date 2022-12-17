@@ -1,19 +1,16 @@
 # Time Bank
-A website where people can exchange skills with the price of time.
 
-### Sexy features:
+## 1) What is a  time bank...
+
+## 2) Purpose of this website...
+
+## 3) Sexy features: (with images / gifs)
 - Spotlight Effects
 - Parallax Effects
 - Livechat (firebase)
 - SEO
-- Multi-language
 - Google Maps / Location Sharing
 
-### Currently working on:
-Frontend Design & Parallax Effects
+## Tutorial / walkthrough
 
-### To work on next:
-Post APIs
 
-### Trouble:
-CORS handlers not functioning properly on POST APIs
