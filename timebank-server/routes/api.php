@@ -2,28 +2,18 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\User\PostController;
-use App\Http\Controllers\User\AuthController;
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
 
-// Route::group(['prefix' => 'v0.1'], function () {
-//     Route::post('login', [UserController::class, 'login']);
-//     Route::post('signup', [UserController::class, 'signup']);
-//     Route::get('getAllPosts', [PostController::class, 'getAllPosts']); //to display all posts on index page
-//     Route::get('getMyPosts', [PostController::class, 'getMyPosts']); //to display all my posts on my profile page
-//     Route::get('getSpecificPosts', [PostController::class, 'getSpecificPosts']); //to display specific posts based on search on index page (search by skil to learn)
-// });
-
-Route::group(['prefix' => 'v0.1'], function () {
-    Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
-        Route::post('login', [AuthController::class, 'login']);
-        Route::post('register', [AuthController::class, 'register']);
-        Route::post('logout', [AuthController::class, 'logout']);
-        Route::post('refresh', [AuthController::class, 'refresh']);
-        Route::get('user-profile', [AuthController::class, 'userProfile']);    
-    });
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
 });
