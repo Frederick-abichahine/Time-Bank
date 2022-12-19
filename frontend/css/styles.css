@@ -244,7 +244,7 @@ Styling the post cards
  */
 
 .post-container{
-    /* sizing the container for the profile card */
+    /* sizing the container for the post card */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -254,7 +254,7 @@ Styling the post cards
 }
 
 .post{
-    /* creating the profile card */
+    /* creating the post card */
     position: relative;
     width: 500px;
     height: 230px;
@@ -273,7 +273,7 @@ Styling the post cards
 }
 
 .user-pic{
-    /* styling the profile picture */
+    /* styling the user's profile picture */
     position: absolute;
     width: 100px;
     height: 100px;
@@ -306,7 +306,7 @@ Styling the post cards
 }
 
 .post .post-content{
-    /* styling the content within the profile card */
+    /* styling the content within the post card */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -317,7 +317,7 @@ Styling the post cards
 }
 
 .post .post-content .post-details{
-    /* styling the details within the profile card */
+    /* styling the details within the post card */
     padding: 40px;
     text-align: center;
     width: 100%;
@@ -331,7 +331,7 @@ Styling the post cards
 }
 
 .post .post-content .post-details h2{
-    /* styling the name within the profile card */
+    /* styling the name within the post card */
     font-size: 1.4em;
     font-weight: 600;
     color: rgb(255, 255, 255);
@@ -339,7 +339,7 @@ Styling the post cards
 }
 
 .post .post-content .post-details h2 span{
-    /* styling the job title / major / "what you do" within the profile card */
+    /* styling the skill to learn, offer and time within the post card */
     font-size: 0.7em;
     font-weight: 450;
     opacity: 0.6;
@@ -350,14 +350,14 @@ Styling the post cards
 }
 
 .post .post-content .post-details .post-info{
-    /* styling the more info within the profile card */
+    /* styling the post info within the post card */
     display: flex;
     justify-content: space-between;
     margin: 40px 0;
 }
 
 .post .post-content .post-details .post-info h3{
-    /* styling the headers of more info within the profile card */
+    /* styling the headers of post info within the post card */
     font-size: 1em;
     color: rgb(255, 255, 255);
     line-height: 1.5em;
