@@ -3,7 +3,8 @@
 // ##################################
 
 const timebank_pages = {}
-const base_url = "http://localhost:8000/api/v0.1/"
+const base_url = "http://localhost:8000/api/v0.1/auth/"
+// let main_token = ""
 
 // ###############
 // Loader Function
@@ -41,18 +42,16 @@ timebank_pages.loadLoginSignup = () => {
         l_formData.append('password', l_password)
         const l_resp = await timebank_pages.postAPI(l_url, l_formData)
 
-        if (l_resp.data.status == "failed"){
-            l_message.innerHTML = "<i><h6 style = \"color: red;\"> Please Fill All Fields</h6></i>"
-        } 
-        else if(l_resp.data.status == "user not found"){
-            l_message.innerHTML = "<i><h6 style = \"color: red;\"> Invalid Credentials</h6></i>"
-        } 
-        else if(l_resp.data.status == "success"){
+        if (l_resp){
+            // const auth_url = base_url + "user-profile"
+            // const user_data = await timebank_pages.getAuthUserAPI(auth_url, l_resp.data.access_token)
+            // console.log(user_data)
             l_message.innerHTML = "<i><h6 style = \"color: green;\"> Success</h6></i>"
-            location.assign('../html/index.html')
-        } 
+            // location.assign('../html/index.html')
+            console.log(l_resp.data)
+        }
         else{
-            l_message.innerHTML = "<i><h6 style = \"color: red;\"> Uh oh! Something Went Wrong</h6></i>"
+            l_message.innerHTML = "<i><h6 style = \"color: red;\"> Uh Oh! Something Is Not Right</h6></i>"
         }
     })
 
@@ -68,18 +67,12 @@ timebank_pages.loadLoginSignup = () => {
         s_formData.append('password', s_password)
         const s_resp = await timebank_pages.postAPI(s_url, s_formData)
 
-        if (s_resp.data.status == "failed"){
-            s_message.innerHTML = "<i><h6 style = \"color: red;\"> Please Fill All Fields</h6></i>"
-        } 
-        else if(s_resp.data.status == "email already exists"){
-            s_message.innerHTML = "<i><h6 style = \"color: red;\"> Email Already Exists</h6></i>"
-        } 
-        else if(s_resp.data.status == "success"){
+        if (s_resp){
             s_message.innerHTML = "<i><h6 style = \"color: green;\"> Success</h6></i>"
-            // location.assign('../html/index.html')
-        } 
+            location.assign('../html/index.html')
+        }
         else{
-            s_message.innerHTML = "<i><h6 style = \"color: red;\"> Uh oh! Something Went Wrong</h6></i>"
+            s_message.innerHTML = "<i><h6 style = \"color: red;\"> Uh Oh! Something Is Not Right</h6></i>"
         }
     })
 }
@@ -131,7 +124,6 @@ timebank_pages.loadIndex = () => {
 // ######################
 
 timebank_pages.loadMessages = () => {
-    console.log('messages page loaded')
     // Calling funtion to display working and appropriate navigation bar
     timebank_pages.loadNav(250) // 250px will be the starting position of the spotlight
 }
@@ -141,7 +133,6 @@ timebank_pages.loadMessages = () => {
 // #####################
 
 timebank_pages.loadProfile = () => {
-    console.log('profile page loaded')
     // Calling funtion to display working and appropriate navigation bar
     timebank_pages.loadNav(118) // 118px will be the starting position of the spotlight
     const edit_btn = document.getElementById('edit-profile-btn')
@@ -205,35 +196,32 @@ timebank_pages.loadNav = (px) => { // px is the starting position of the spotlig
     const nav = document.getElementById('nav_bar')
 
     home.addEventListener('click', async () => {
-        console.log('home button clicked')
         await delay(700) // adding a small delay for the animation to take place
         location.assign('../html/index.html')
     })
     profile.addEventListener('click', async () => {
-        console.log('profile button clicked')
         await delay(700)
         location.assign('../html/profile.html')
     })
     post.addEventListener('click', async () => {
-        console.log('post button clicked')
         await delay(700)
         location.assign('../html/index.html')
     })
     about.addEventListener('click', async () => {
-        console.log('about button clicked')
         await delay(700)
         location.assign('../html/index.html')
     })
 
     message.addEventListener('click', async () => {
-        console.log('message button clicked')
         await delay(700)
         location.assign('../html/messages.html')
     })
 
     logout.addEventListener('click', async () => {
-        console.log('logout button clicked')
         await delay(700)
+        // const logout_url = base_url + 'logout'
+        // const logout_formData = new FormData()
+        // const exit = await timebank_pages.postAPI(logout_url, logout_formData, main_token)
         location.assign('../html/login_signup.html')
     })
 }
@@ -246,6 +234,19 @@ timebank_pages.getAPI = async(url) => {
     //using axios to get data
     try{
         return await axios(url)
+    } catch (error) {
+        console.log("error", error)
+    }
+}
+
+timebank_pages.getAuthUserAPI = async(url, token=null) => {
+    //using axios to get data
+    try{
+        return await axios.get(url, {
+            headers: {
+                "Authorization": `Bearer ${token}`,
+            }
+        })
     } catch (error) {
         console.log("error", error)
     }
