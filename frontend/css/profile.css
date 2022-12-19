@@ -215,7 +215,7 @@ Styling the profile card
     text-align: center;
     width: 100%;
     transition: 0.5s;
-    transform: translateY(220px);
+    transform: translateY(200px);
 }
 
 .card:hover .profile-content .details{

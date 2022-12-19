@@ -258,7 +258,7 @@ Styling the post cards
     position: relative;
     width: 500px;
     height: 230px;
-    background:  linear-gradient(to right bottom, #000000, #000000, #222222, #707070, #ffffff);
+    background:  linear-gradient(to right bottom, #000000, #000000, #222222, #707070, #b9b9b9);
     border-radius: 20px;
     box-shadow: 0 35px 80px #ffffff;
     transition: 0.5s; /* to give the card a slight delay effect when expanding and shrinking back*/
