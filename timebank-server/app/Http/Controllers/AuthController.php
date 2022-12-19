@@ -10,20 +10,20 @@ use Response;
 
 class AuthController extends Controller
 {
-    /**
-     * Create a new AuthController instance.
-     *
-     * @return void
-     */
+    /*
+    #####################################
+    Create a new AuthController instance.
+    #####################################
+    */
 
     public function __construct() {
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
-    /**
-     * Get a JWT via given credentials.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
+    /*
+    #########################################
+    Login to get a JWT via given credentials.
+    #########################################
+    */
     public function login(Request $request){
     	$validator = Validator::make($request->all(), [
             'email' => 'required',
@@ -35,26 +35,34 @@ class AuthController extends Controller
         if (! $token = auth()->attempt($validator->validated())) {
             return Response::json(['error' => 'Unauthorized'], 401);
         }
-        return $this->createNewToken($token);
+        // now we are sure that the user exists and the password is correct
+        $jwtt = $this->createNewToken($token); //get the token
+        // $user = User::where('email', $request->email) //get the user
+        // ->where('password', $request->password)
+        // ->get();
+        // $user->jwt_token = "hi"; //update the user with the new token in the database
+        // $user->save();
+        return $jwtt;
     }
-    /**
-     * Register a User.
-     *
-     * @return \Illuminate\Http\JsonResponse
+    /*
+    #################################################################################
+    Register a User. Once registered, the user will need to login to get a JWT token.
+    #################################################################################
      */
 
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
             'username' => 'required|string|unique:users',
-            'phone_number' => 'required|string|min:6',
-            'password' => 'required|string|min:8',
+            'email' => 'required|unique:users',
+            'password' => 'required|string|min:6',
         ]);
         if($validator->fails()){
             return Response::json($validator->errors()->toJson(), 400);
         }
         $user = User::create(array_merge(
                     $validator->validated(),
-                    ['password' => bcrypt($request->password)]
+                    ['password' => bcrypt($request->password)] //hashing the password
+                    //add later: get location from google
                 ));
         return Response::json([
             'message' => 'User successfully registered',
