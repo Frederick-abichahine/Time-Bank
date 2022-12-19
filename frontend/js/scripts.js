@@ -2,9 +2,8 @@
 // Declaring & Initializing Variables
 // ##################################
 
-const timebank_pages = {}
+const timebank_pages = {} 
 const base_url = "http://localhost:8000/api/v0.1/auth/"
-// let main_token = ""
 
 // ###############
 // Loader Function
@@ -43,12 +42,10 @@ timebank_pages.loadLoginSignup = () => {
         const l_resp = await timebank_pages.postAPI(l_url, l_formData)
 
         if (l_resp){
-            // const auth_url = base_url + "user-profile"
-            // const user_data = await timebank_pages.getAuthUserAPI(auth_url, l_resp.data.access_token)
-            // console.log(user_data)
             l_message.innerHTML = "<i><h6 style = \"color: green;\"> Success</h6></i>"
-            // location.assign('../html/index.html')
             console.log(l_resp.data)
+            localStorage.setItem('token', l_resp.data.access_token) // Storing the token in local storage for future use
+            location.assign('../html/index.html')
         }
         else{
             l_message.innerHTML = "<i><h6 style = \"color: red;\"> Uh Oh! Something Is Not Right</h6></i>"
@@ -60,16 +57,17 @@ timebank_pages.loadLoginSignup = () => {
         const s_username = signup_username.value
         const s_email = signup_email.value
         const s_password = signup_password.value
-        const s_url = base_url + "signup"
+        const s_url = base_url + "register"
         const s_formData = new FormData()
         s_formData.append('username', s_username)
         s_formData.append('email', s_email)
         s_formData.append('password', s_password)
         const s_resp = await timebank_pages.postAPI(s_url, s_formData)
+        console.log(s_resp)
 
         if (s_resp){
             s_message.innerHTML = "<i><h6 style = \"color: green;\"> Success</h6></i>"
-            location.assign('../html/index.html')
+            location.assign('./login_signup.html')
         }
         else{
             s_message.innerHTML = "<i><h6 style = \"color: red;\"> Uh Oh! Something Is Not Right</h6></i>"
@@ -82,6 +80,8 @@ timebank_pages.loadLoginSignup = () => {
 // ##################
 
 timebank_pages.loadIndex = () => {
+    // Getting the token from local storage, to perform user tasks
+    const tokenn = localStorage.getItem('token')
 
     // Parallax Effect
     const banner = document.getElementById('banner')
