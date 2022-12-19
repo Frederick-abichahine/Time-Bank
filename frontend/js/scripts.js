@@ -141,7 +141,7 @@ timebank_pages.loadIndex = async() => {
                     <hr>
                     <h3 id="skill-to-learn">Skill to learn: <br> ${post_resp.data[i].post.skill_to_learn}</h3>
                     <hr>
-                    <h3 id="offer-time">Offer time: <br> ${post_resp.data[i].post.offer_time} hours</h3>
+                    <h3 id="offer-time">Offer time: <br> ${post_resp.data[i].post.offer_time} hour(s)</h3>
                 </div>
                 <div class="send-message">
                     <button id="message-btn">Message</button>
