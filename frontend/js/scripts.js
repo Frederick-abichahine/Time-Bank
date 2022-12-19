@@ -17,7 +17,7 @@ timebank_pages.loaderFunction = (func_name) => {
 // Login & Signup Function
 // #######################
 
-timebank_pages.loadLoginSignup = () => {
+timebank_pages.loadLoginSignup = async() => {
     // Retrieving the login input fields & button
     const login_email = document.getElementById('logemail')
     const login_password = document.getElementById('logpass')
@@ -79,9 +79,14 @@ timebank_pages.loadLoginSignup = () => {
 // Home Page Function
 // ##################
 
-timebank_pages.loadIndex = () => {
+timebank_pages.loadIndex = async() => {
     // Getting the token from local storage, to perform user tasks
     const tokenn = localStorage.getItem('token')
+    console.log(tokenn) 
+    const url = base_url + "test"
+    const formData = new FormData()
+    const resp = await timebank_pages.postAPI(url, formData, tokenn)
+    console.log(resp.data)
 
     // Parallax Effect
     const banner = document.getElementById('banner')
