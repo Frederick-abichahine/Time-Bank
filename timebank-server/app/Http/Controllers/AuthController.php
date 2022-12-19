@@ -7,17 +7,40 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Validator;
 use Response;
+use Tymon\JWTAuth\Facades\JWT;
 
 class AuthController extends Controller
 {
+    /*
+    ######################################
+    Tester function to test the JWT token.
+    ######################################
+    */
+    public function test(Request $request) {
+        // Get the JWT from the request header
+        $jwt = $request->header('Authentication');
+        //update user with new token
+        $user = User::where('email', 'admin@gmail.com')->get(); //get the user
+        $user->jwt_token = $jwt; //update the user with the new token in the database
+        // if($user->save()){
+        //     return response()->json(['success' => 'User updated successfully.'], 200);
+        // }
+        // else{
+        //     return response()->json(['error' => 'User not updated.'], 401);
+        // }
+        return $user;
+        // return $jwt;
+
+        /////////////////////
+        // return $request->headers->get('Authentication');
+    }
     /*
     #####################################
     Create a new AuthController instance.
     #####################################
     */
-
     public function __construct() {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'test']]);
     }
     /*
     #########################################
@@ -42,6 +65,12 @@ class AuthController extends Controller
         // ->get();
         // $user->jwt_token = "hi"; //update the user with the new token in the database
         // $user->save();
+
+        // add the jwt token to the database for the user as a string
+        $user = User::where('email', $request->email) //get the user
+        ->where('password', $request->password)
+        ->update(['jwt_token' => $jwtt]);
+
         return $jwtt;
     }
     /*
