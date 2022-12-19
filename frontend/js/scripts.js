@@ -152,32 +152,6 @@ timebank_pages.loadIndex = async() => {
     </div>`
     
     }
-
-    // `
-    // <div class="post-container">
-    //         <div class="post">
-    //             <div class="user-pic">
-    //                 <img id="profile-pic" src="${post_resp.data[0].user[0].profile_picture}" alt="display-pic">
-    //             </div>
-    //             <div class="post-content">
-    //                 <div class="post-details">
-    //                     <h2 id="user-info">${post_resp.data[0].user[0].username}<br><span>${post_resp.data[0].user[0].description}</span></h2>
-    //                     <i><h4 id="location"></h4></i>
-    //                     <div class="post-info">
-    //                         <h3 id="skill-to-offer"></h3>
-    //                         <hr>
-    //                         <h3 id="skill-to-learn"></h3>
-    //                         <hr>
-    //                         <h3 id="offer-time"><br> Time: <br> 3 Hours</h3>
-    //                     </div>
-    //                     <div class="send-message">
-    //                         <button id="message-btn">Message</button>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-    // `
 } 
 
 // ######################
@@ -230,6 +204,14 @@ timebank_pages.loadProfile = async() => {
     const resp2 = await timebank_pages.getAuthUserAPI(url2, tokenn)
     const num_posts = document.getElementById('num-posts')
     num_posts.innerHTML = "Posts: " + `${resp2.data}`
+}
+
+// ##################
+// Post Page Function
+// ##################
+
+timebank_pages.loadPost = async() => {
+    timebank_pages.loadNav(185)
 }
 
 // #######################
@@ -294,7 +276,7 @@ timebank_pages.loadNav = (px) => { // px is the starting position of the spotlig
     })
     post.addEventListener('click', async () => {
         await delay(700)
-        location.assign('../html/index.html')
+        location.assign('../html/post.html')
     })
     about.addEventListener('click', async () => {
         await delay(700)
