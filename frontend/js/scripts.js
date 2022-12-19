@@ -3,7 +3,7 @@
 // ##################################
 
 const timebank_pages = {} 
-const base_url = "http://localhost:8000/api/v0.1/auth/"
+const base_url = "http://localhost:8000/api/v0.1/"
 
 // ###############
 // Loader Function
@@ -35,7 +35,7 @@ timebank_pages.loadLoginSignup = async() => {
     login_btn.addEventListener('click', async() => {
         const l_email = login_email.value
         const l_password = login_password.value
-        const l_url = base_url + "login"
+        const l_url = base_url + "auth/login"
         const l_formData = new FormData()
         l_formData.append('email', l_email)
         l_formData.append('password', l_password)
@@ -43,7 +43,6 @@ timebank_pages.loadLoginSignup = async() => {
 
         if (l_resp){
             l_message.innerHTML = "<i><h6 style = \"color: green;\"> Success</h6></i>"
-            console.log(l_resp.data)
             localStorage.setItem('token', l_resp.data.access_token) // Storing the token in local storage for future use
             location.assign('../html/index.html')
         }
@@ -57,7 +56,7 @@ timebank_pages.loadLoginSignup = async() => {
         const s_username = signup_username.value
         const s_email = signup_email.value
         const s_password = signup_password.value
-        const s_url = base_url + "register"
+        const s_url = base_url + "auth/register"
         const s_formData = new FormData()
         s_formData.append('username', s_username)
         s_formData.append('email', s_email)
@@ -81,12 +80,9 @@ timebank_pages.loadLoginSignup = async() => {
 
 timebank_pages.loadIndex = async() => {
     // Getting the token from local storage, to perform user tasks
-    const tokenn = localStorage.getItem('token')
-    console.log(tokenn) 
-    const url = base_url + "test"
-    const formData = new FormData()
-    const resp = await timebank_pages.postAPI(url, formData, tokenn)
-    console.log(resp.data)
+    const tokenn = localStorage.getItem('token') 
+    const url = base_url + "auth/user-profile"
+    const resp = await timebank_pages.getAuthUserAPI(url, tokenn)
 
     // Parallax Effect
     const banner = document.getElementById('banner')
@@ -137,7 +133,7 @@ timebank_pages.loadMessages = () => {
 // Profile Page Function
 // #####################
 
-timebank_pages.loadProfile = () => {
+timebank_pages.loadProfile = async() => {
     // Calling funtion to display working and appropriate navigation bar
     timebank_pages.loadNav(118) // 118px will be the starting position of the spotlight
     const edit_btn = document.getElementById('edit-profile-btn')
@@ -145,7 +141,31 @@ timebank_pages.loadProfile = () => {
         console.log('edit button clicked')
         location.assign('../html/profile.html') // To fix: takes to the edit profile page
     })
-    
+    // Getting the token from local storage & using it to get the user's profile information
+    const tokenn = localStorage.getItem('token')
+    const url = base_url + "auth/user-profile"
+    const resp = await timebank_pages.getAuthUserAPI(url, tokenn)
+
+    // Getting the user's name and description
+    const profile_info = document.getElementById('profile-info')
+    profile_info.innerHTML = `${resp.data.username}` + "<br><span>" + `${resp.data.description}` + "</span>"
+
+    // Getting the user's location
+    const user_location = document.getElementById('location')
+    user_location.innerHTML = `${resp.data.location}`
+
+    // Getting the date the user joined
+    const date_joined = document.getElementById('date-joined')
+    const date = resp.data.created_at
+    const fixed_date = date.slice(0, 10)
+    date_joined.innerHTML = "Joined: " + `${fixed_date}`
+
+    // Getting the number of posts the user has made
+    const user_id = resp.data.id
+    const url2 = base_url + "count-posts/" + `${user_id}`
+    const resp2 = await timebank_pages.getAPI(url2)
+    const num_posts = document.getElementById('num-posts')
+    num_posts.innerHTML = "Posts: " + `${resp2.data}`
 }
 
 // #######################
@@ -224,9 +244,10 @@ timebank_pages.loadNav = (px) => { // px is the starting position of the spotlig
 
     logout.addEventListener('click', async () => {
         await delay(700)
-        // const logout_url = base_url + 'logout'
-        // const logout_formData = new FormData()
-        // const exit = await timebank_pages.postAPI(logout_url, logout_formData, main_token)
+        const tokenn = localStorage.getItem('token')
+        const logout_url = base_url + 'auth/logout'
+        const logout_formData = new FormData()
+        const exit = await timebank_pages.postAPI(logout_url, logout_formData, tokenn)
         location.assign('../html/login_signup.html')
     })
 }
@@ -243,7 +264,7 @@ timebank_pages.getAPI = async(url) => {
         console.log("error", error)
     }
 }
-
+// "Authorization": `Bearer ${token}`,
 timebank_pages.getAuthUserAPI = async(url, token=null) => {
     //using axios to get data
     try{
@@ -262,7 +283,7 @@ timebank_pages.postAPI = async(url, data, token=null) => {
     try{
         return await axios.post(url, data, {
             headers: {
-                "Authentication": token,
+                "Authorization": `Bearer ${token}`,
             }
         })
     } catch (error) {
