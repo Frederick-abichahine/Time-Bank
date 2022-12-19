@@ -246,11 +246,13 @@ Styling the post cards
 .post-container{
     /* sizing the container for the post card */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     /* min-height: -100vh; */
-    padding-top: 12%;
+    padding-top: 6%;
     z-index: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .post{
@@ -334,6 +336,14 @@ Styling the post cards
     /* styling the name within the post card */
     font-size: 1.4em;
     font-weight: 600;
+    color: rgb(255, 255, 255);
+    line-height: 1.2em;
+}
+
+.post .post-content .post-details h4{
+    /* styling the name within the post card */
+    font-size: 0.8em;
+    font-weight: 400;
     color: rgb(255, 255, 255);
     line-height: 1.2em;
 }
