@@ -38,7 +38,7 @@ Styling the navigation bar
     box-sizing: border-box;
     display: flex;
     width: 100%;
-    height: 20vh;
+    height: 10vh;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -128,4 +128,86 @@ Styling the navigation bar
     #ffffff00 90%);
     clip-path: polygon(5% 100%, 25% 0px, 75% 0px ,95% 100%);
     pointer-events: none;
+}
+
+/* 
+#####################
+Styling the post card
+#####################
+*/
+
+.card-container{
+    /* sizing the container for the profile card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: -100vh; */
+    z-index: 6;
+}
+
+.card{
+    /* creating the profile card */
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background:  linear-gradient(to right bottom, #000000, #000000, #222222, #707070, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 35px 80px #ffffff;
+    transition: 0.5s; /* to give the card a slight delay effect when expanding and shrinking back*/
+    z-index: 6;
+    cursor: default;
+}
+
+.card:hover{
+    /* expanding card after hover */
+    box-shadow: 0 35px 80px #134a57;
+}
+
+.card .profile-content{
+    /* styling the content within the profile card */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden; /* to hide all content below the unzoomed profile box*/
+}
+
+.card .profile-content .details{
+    /* styling the details within the profile card */
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(200px);
+}
+
+.card:hover .profile-content .details{
+    /* for the content details to appear after expanding */
+    transform: translateY(10px);
+}
+
+.card .profile-content .details .edit-profile{
+    display: flex;
+    justify-content: center;
+}
+
+.card .profile-content .details .edit-profile button{
+    cursor: pointer;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    background-image: linear-gradient(to left bottom, #84ddf1, #134a57, #84ddf1);
+    color: #ffffff;
+    box-shadow: 0 8px 24px 0 rgba(255, 255, 255, 0.2);
+}
+
+.card .profile-content .details .edit-profile button:hover{
+    background-image: linear-gradient(to left bottom, #134a57, #84ddf1, #134a57);
+    color: #000000;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
 }
