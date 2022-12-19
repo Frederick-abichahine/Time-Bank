@@ -5,6 +5,7 @@ Importing fonts
 */
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 
 /* 
 ##############
@@ -242,15 +243,147 @@ Styling the post cards
 ######################
  */
 
-.post {
-    width: 40%;
-    height: 200px;
-    margin: 100px auto;
-    background-color: #cecece;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
+.post-container{
+    /* sizing the container for the profile card */
+    display: flex;
     justify-content: center;
     align-items: center;
+    /* min-height: -100vh; */
+    padding-top: 12%;
+    z-index: 0;
+}
+
+.post{
+    /* creating the profile card */
     position: relative;
+    width: 500px;
+    height: 230px;
+    background:  linear-gradient(to right bottom, #000000, #000000, #222222, #707070, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 35px 80px #ffffff;
+    transition: 0.5s; /* to give the card a slight delay effect when expanding and shrinking back*/
+    z-index: 0;
+    cursor: default;
+}
+
+.post:hover{
+    /* expanding card after hover */
+    height: 300px;
+    box-shadow: 0 35px 80px #134a57;
+}
+
+.user-pic{
+    /* styling the profile picture */
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 30px; /* to center the profile picture */
+    top: -25px; /* to give it that out of box look */
+    transform: translate(-50%); 
+    background: #ffffff;
+    border-radius: 100%;
+    box-shadow: 0 15px 50px #ffffff30;
+    overflow: hidden;
+    transition: 0.5s; /* to give the profile picture a slight delay effect expanding and shrinking with the box*/
+}
+
+.user-pic img{
+    /* to remove the border around the profile picture */
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+}
+
+.post:hover .user-pic{
+    /* expanding profile picture after hover */
+    width: 130px;
+    height: 130px;
+    box-shadow: 0 15px 50px #134a57;
+}
+
+.post .post-content{
+    /* styling the content within the profile card */
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden; /* to hide all content below the unzoomed profile box*/
+}
+
+.post .post-content .post-details{
+    /* styling the details within the profile card */
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(100px);
+}
+
+.post:hover .post-content .post-details{
+    /* for the content details to appear after expanding */
+    transform: translateY(20px);
+}
+
+.post .post-content .post-details h2{
+    /* styling the name within the profile card */
+    font-size: 1.4em;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    line-height: 1.2em;
+}
+
+.post .post-content .post-details h2 span{
+    /* styling the job title / major / "what you do" within the profile card */
+    font-size: 0.7em;
+    font-weight: 450;
+    opacity: 0.6;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.post .post-content .post-details .post-info{
+    /* styling the more info within the profile card */
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.post .post-content .post-details .post-info h3{
+    /* styling the headers of more info within the profile card */
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    line-height: 1.5em;
+    font-weight: 400;
+}
+
+.post .post-content .post-details .send-message{
+    display: flex;
+    justify-content: center;
+}
+
+.post .post-content .post-details .send-message button{
+    cursor: pointer;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    background-image: linear-gradient(to left bottom, #84ddf1, #134a57, #84ddf1);
+    color: #ffffff;
+    box-shadow: 0 8px 24px 0 rgba(255, 255, 255, 0.2);
+}
+
+.post .post-content .post-details .send-message button:hover{
+    background-image: linear-gradient(to left bottom, #134a57, #84ddf1, #134a57);
+    color: #000000;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
 }
