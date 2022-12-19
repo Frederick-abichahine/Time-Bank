@@ -118,7 +118,67 @@ timebank_pages.loadIndex = async() => {
             search.classList.remove('scrolled')
         }
     })
-}
+
+    // Getting & Displaying All The Posts With The User That Posted It
+    const post_url = base_url + "posts/get-all-posts"
+    const post_resp = await timebank_pages.getAPI(post_url)
+    const post_container = document.getElementById('whole-post')
+
+    // Looping for all posts & displaying the content on the home page
+    for (let i = 0; i < post_resp.data.length; i++) {
+        post_container.innerHTML += `
+        <div class="post-container">
+        <div class="post">
+        <div class="user-pic">
+            <img id="profile-pic" src="${post_resp.data[i].user[0].profile_picture}" alt="display-pic">
+        </div>
+        <div class="post-content">
+            <div class="post-details">
+                <h2 id="user-info">${post_resp.data[i].user[0].username}<br><span>${post_resp.data[i].user[0].description}</span></h2>
+                <i><h4 id="location">Location: ${post_resp.data[i].user[0].location}</h4></i>
+                <div class="post-info">
+                    <h3 id="skill-to-offer">Skill to offer: <br> ${post_resp.data[i].post.skill_to_offer}</h3>
+                    <hr>
+                    <h3 id="skill-to-learn">Skill to learn: <br> ${post_resp.data[i].post.skill_to_learn}</h3>
+                    <hr>
+                    <h3 id="offer-time">Offer time: <br> ${post_resp.data[i].post.offer_time} hours</h3>
+                </div>
+                <div class="send-message">
+                    <button id="message-btn">Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>`
+    
+    }
+
+    // `
+    // <div class="post-container">
+    //         <div class="post">
+    //             <div class="user-pic">
+    //                 <img id="profile-pic" src="${post_resp.data[0].user[0].profile_picture}" alt="display-pic">
+    //             </div>
+    //             <div class="post-content">
+    //                 <div class="post-details">
+    //                     <h2 id="user-info">${post_resp.data[0].user[0].username}<br><span>${post_resp.data[0].user[0].description}</span></h2>
+    //                     <i><h4 id="location"></h4></i>
+    //                     <div class="post-info">
+    //                         <h3 id="skill-to-offer"></h3>
+    //                         <hr>
+    //                         <h3 id="skill-to-learn"></h3>
+    //                         <hr>
+    //                         <h3 id="offer-time"><br> Time: <br> 3 Hours</h3>
+    //                     </div>
+    //                     <div class="send-message">
+    //                         <button id="message-btn">Message</button>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+    // `
+} 
 
 // ######################
 // Messages Page Function
@@ -146,6 +206,10 @@ timebank_pages.loadProfile = async() => {
     const url = base_url + "auth/user-profile"
     const resp = await timebank_pages.getAuthUserAPI(url, tokenn)
 
+    // Getting the user's profile picture
+    const profile_pic = document.getElementById('pp')
+    profile_pic.src = `${resp.data.profile_picture}`
+
     // Getting the user's name and description
     const profile_info = document.getElementById('profile-info')
     profile_info.innerHTML = `${resp.data.username}` + "<br><span>" + `${resp.data.description}` + "</span>"
@@ -162,8 +226,8 @@ timebank_pages.loadProfile = async() => {
 
     // Getting the number of posts the user has made
     const user_id = resp.data.id
-    const url2 = base_url + "count-posts/" + `${user_id}`
-    const resp2 = await timebank_pages.getAPI(url2)
+    const url2 = base_url + "posts/count-posts"
+    const resp2 = await timebank_pages.getAuthUserAPI(url2, tokenn)
     const num_posts = document.getElementById('num-posts')
     num_posts.innerHTML = "Posts: " + `${resp2.data}`
 }
