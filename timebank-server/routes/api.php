@@ -27,6 +27,6 @@ Route::group(['prefix' => 'v0.1'], function () {
 
     // Grouping all routes related to users
     Route::group(['prefix' => 'users'], function () {
-        Route::get('get-user-details/{id?}', [UserController::class, 'getUserDetails']);
+        Route::post('edit-profile', [UserController::class, 'editProfile']);
     });
 });
