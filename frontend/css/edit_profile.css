@@ -177,7 +177,7 @@ Styling the post card
 }
 
 .card .profile-content{
-    /* styling the content within the profile card */
+    /* styling the content within the edit profile card */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -188,7 +188,7 @@ Styling the post card
 }
 
 .card .profile-content .details{
-    /* styling the details within the profile card */
+    /* styling the details within the edit profile card */
     padding: 40px;
     text-align: center;
     width: 100%;
