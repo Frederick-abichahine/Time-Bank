@@ -18,6 +18,22 @@ A time bank has always existed in theory; however, it has never been implemented
 2- Google Maps / Location Sharing  
 3- and more...  
 
-## Having a hard time getting started? Follow this simple tutorial:
+## Having a hard time getting started? Follow this simple tutorial:  
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_1.png">  
 
+First and foremost, you need to create an account. To do so, you must click on the toggle button (look at the red arrow in the image above) to flip the login card to the sign up card.
+  
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_2.png">  
 
+As soon as the card flips you will be able to fill out all the required information and then hit the submit button.  
+Then, you will be sent back to the login side of the card to be able to login with your newly created account.  
+Woohoo! (P.S. thanks for joining the platform)
+
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_3.png">  
+
+You are then greeted with a beautiful Time Bank title.  
+Now what? Well, here comes the fun part!  
+You should now scroll down to view the posts, but while doing so you might notice some things moving around...IT IS A PARALLAX EFFECT!  
+Double woohoo!
+
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_4.png"> 
