@@ -304,6 +304,7 @@ Styling the post cards
     align-items: center;
     /* min-height: -100vh; */
     padding-top: 5%;
+    padding-bottom: 9%;
     z-index: 0;
     flex-direction: column;
     justify-content: space-evenly;
