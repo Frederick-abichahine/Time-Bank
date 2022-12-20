@@ -118,6 +118,11 @@ timebank_pages.loadIndex = async() => {
         }
     })
 
+    // const search_btn = document.getElementById('search')
+    // search_btn.addEventListener('enter', () => {
+    //     location.assign('./search.html')
+    // })
+
     // Getting & Displaying All The Posts With The User That Posted It
     const post_url = base_url + "posts/get-all-posts"
     const post_resp = await timebank_pages.getAPI(post_url)
