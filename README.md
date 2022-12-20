@@ -1,4 +1,5 @@
-# Time Bank
+<h1 align="center"> Time Bank </h1>  
+<p align="center"><img align="center" width="20%" height="20%" src="frontend/assets/time_icon.png"></p>
 
 ## What is a time bank?
 It is in it's name, a bank where the only currency is time! Namely, it is a reciprocity-based work trading system in which hours are the currency. With time banking, a person with one skill set can bank and trade hours of work for equal hours of work in another skill set instead of paying or being paid for services. In addition, the hours banked are always traded equally regardless of the services rendered. This equality is intended to foster ties in communities and, by making all contributions valued equally, encourage equality in the communities themselves.
@@ -18,77 +19,77 @@ A time bank has always existed in theory; however, it has never been implemented
 2- Google Maps / Location Sharing  
 3- and more...  
 
-## Having a hard time getting started? Follow this simple tutorial:  
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_1.png">  
+## <p align="center"> Having a hard time getting started? <br> Follow this simple tutorial:</p>  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_1.png"></p>  
 
-First and foremost, you need to create an account. To do so, you must click on the toggle button (look at the red arrow in the image above) to flip the login card to the sign up card.
+<p align="center">First and foremost, you need to create an account. To do so, you must click on the toggle button (look at the red arrow in the image above) to flip the login card to the sign up card.</p>  
   
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_2.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_2.png"></p>  
 
-As soon as the card flips you will be able to fill out all the required information and then hit the submit button.  
+<p align="center">As soon as the card flips you will be able to fill out all the required information and then hit the submit button.  
 Then, you will be sent back to the login side of the card to be able to login with your newly created account.  
-Woohoo! (P.S. thanks for joining the platform)
+Woohoo! (P.S. thanks for joining the platform)</p>  
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_3.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_3.png"></p>   
 
-You are then greeted with a beautiful Time Bank title.  
+<p align="center">You are then greeted with a beautiful Time Bank title.  
 Now what? Well, here comes the fun part!  
 You should now scroll down to view the posts, but while doing so you might notice some things moving around...IT IS A PARALLAX EFFECT!  
-Double woohoo!
+Double woohoo!</p>  
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_4.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_4.png"></p>  
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_5.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_5.png"></p>  
 
-After scrolling for a bit, you will notice more things appear.  
-1) The search bar... what? where?? The glowing black circle at the top of the page!  
-2) The navigation bar. Yes, that bar with the spotlight.  
-3) Lastly, the first post of the feed! Triple woohoo!  
+<p align="center">After scrolling for a bit, you will notice more things appear.</p>  
+<p align="center">1) The search bar... what? where?? The glowing black circle at the top of the page!</p>  
+<p align="center">2) The navigation bar. Yes, that bar with the spotlight.</p>  
+<p align="center">3) Lastly, the first post of the feed! Triple woohoo!</p>  
 
-Now, what happens if we click on that infamous glowing black orb?  
+<p align="center">Now, what happens if we click on that infamous glowing black orb?</p>  
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_6.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_6.png"></p>  
 
-Boom! You can now search for specific offers of interest rather than looking at all available options!  
+<p align="center">Boom! You can now search for specific offers of interest rather than looking at all available options!  
 What if you find an interesting post?  
-Then simply hover over that post and a message button will pop up!
+Then simply hover over that post and a message button will pop up!</p>  
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_7.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_7.png"></p>   
 
-When clicked, you would be able to send private messages back and forth with the owner of that post... well not yet, as soon as it gets implementd! :)  
-After browsing the feed for a while, you might want to take a look at your own profile.  
+<p align="center">When clicked, you would be able to send private messages back and forth with the owner of that post... well not yet, as soon as it gets implementd! :)  
+After browsing the feed for a while, you might want to take a look at your own profile.</p>  
   
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_8.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_8.png"></p>  
 
-To do so, just click on the user icon on the navigation bar.  
+<p align="center">To do so, just click on the user icon on the navigation bar.</p>  
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_9.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_9.png"></p>  
 
-There you go! All your account details and posts will be displayed here.  
-Hmm... but where can you see more & edit your profile?  
+<p align="center">There you go! All your account details and posts will be displayed here.  
+Hmm... but where can you see more & edit your profile?</p>  
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_10.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_10.png"></p>  
   
-It is simple! Once again just hover over your profile card and eveything will appear!  
+<p align="center">It is simple! Once again just hover over your profile card and eveything will appear!</p>  
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_11.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_11.png"></p>  
 
-Pressing on the edit profile button will take you to a page where you will be able to edit your username, email, profile picture and more...   
+<p align="center">Pressing on the edit profile button will take you to a page where you will be able to edit your username, email, profile picture and more...</p>    
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_12.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_12.png"></p>  
 
-After saving your changes, you will be sent back to your profile.  
+<p align="center">After saving your changes, you will be sent back to your profile.  
 You may scroll down to see all the trades that you have posted.  
-But let us say that you posted a cringy post (as most of us had at one point), and you may want to delete it. How?  
+But let us say that you posted a cringy post (as most of us had at one point), and you may want to delete it. How?</p>  
   
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_13.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_13.png"></p>  
 
-It is all about hovering! Move your cursor on to the post that you would like to delete and you will see a delete button pop up. (as well as a nice red color)  
-We might want to skip the message & about pages for now (they will be done soon! I promise!)  
+<p align="center">It is all about hovering! Move your cursor on to the post that you would like to delete and you will see a delete button pop up. (as well as a nice red color)  
+We might want to skip the message & about pages for now (they will be done soon! I promise!)</p>   
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_14.png">  
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_14.png"></p>  
 
-After a nice journey comes a little rest, so you might want to logout by pressing on the exit icon on your navigation bar.  
+<p align="center">After a nice journey comes a little rest, so you might want to logout by pressing on the exit icon on your navigation bar.</p>  
 
 <hr>
-Thank you for visiting!
+<i><h3 align="center">Thank you for visiting! </h3></i>
