@@ -212,6 +212,30 @@ timebank_pages.loadProfile = async() => {
 
 timebank_pages.loadPost = async() => {
     timebank_pages.loadNav(185)
+    const url = base_url + "posts/create-post"
+    const tokenn = localStorage.getItem('token')
+
+    // Retrieving the post input fields & button
+    const skill_to_offer = document.getElementById('to-offer')
+    const skill_to_learn = document.getElementById('to-learn')
+    const offer_time = document.getElementById('offer-time')
+    const post_btn = document.getElementById('edit-profile-btn')
+
+    // Adding an event listener to the post button
+    post_btn.addEventListener('click', async() => {
+        const form_data = new FormData()
+        form_data.append('skill_to_offer', skill_to_offer.value)
+        form_data.append('skill_to_learn', skill_to_learn.value)
+        form_data.append('offer_time', offer_time.value)
+        const resp = await timebank_pages.postAPI(url, form_data, tokenn)
+        if (resp) {
+            location.assign('../html/index.html')
+        }
+        else{
+            const message = document.getElementById('display-error')
+            message.innerHTML = "<i><h4 style = \"color: red; text-align: center;\"> Uh Oh! Something Is Not Right</h4></i>"
+        }
+    })
 }
 
 // #######################
