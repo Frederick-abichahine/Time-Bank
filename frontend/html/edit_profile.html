@@ -7,7 +7,41 @@
         <link rel="icon" type="png" href="../assets/time_icon.png"/> <!-- adding a website icon -->
     </head>
     <body>
-        
+        <div class="container">
+            <nav id="nav_bar" class="nav_bar">
+                <ul><li><a id="home_btn"><i class="lni lni-home"></i></a></li></ul>
+                <ul><li><a id="profile_btn" class="active"><i class="lni lni-user"></i></a></li></ul>
+                <ul><li><a id="post_btn"><i class="lni lni-circle-plus"></i></a></li></ul>
+                <ul><li><a id="chat_btn"><i class="lni lni-wechat"></i></a></li></ul>
+                <ul><li><a id="about_btn"><i class="lni lni-information"></i></a></li></ul>
+                <ul><li><a id="logout_btn"><i class="lni lni-exit"></i></a></li></ul>
+                <div class="tubelight">
+                    <div class="light-ray"></div>
+                </div>
+            </nav>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="form-group">
+                    <div id="display-error"></div>
+                    <label>Edit Username:</label>
+                    <input type="text" id="edit-username" class="form-style">
+                    <label>Edit Email:</label>
+                    <input type="text" id="edit-email" class="form-style">
+                    <label>Edit Profile Picture:</label>
+                    <input type="text" id="edit-pp" class="form-style">
+                    <label>Edit Description:</label>
+                    <input type="text" id="edit-desc" class="form-style">
+                    <label>Edit Location:</label>
+                    <input type="text" id="edit-location" class="form-style">
+                </div>
+                <div class="details">
+                    <div class="edit-profile">
+                        <button id="edit-profile-btn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script> <!-- calling axios -->
         <script src="../js/scripts.js"></script>
         <script>
