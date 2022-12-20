@@ -201,6 +201,52 @@ timebank_pages.loadProfile = async() => {
     const resp2 = await timebank_pages.getAuthUserAPI(url2, tokenn)
     const num_posts = document.getElementById('num-posts')
     num_posts.innerHTML = "Posts: " + `${resp2.data}`
+
+    // Getting & Displaying All The Posts With The User That Posted It
+    const post_url = base_url + "posts/get-user-posts"
+    const post_resp = await timebank_pages.getAuthUserAPI(post_url, tokenn)
+    const post_container = document.getElementById('whole-post')
+
+    // Looping for all posts & displaying the content on the home page
+    for (let i = 0; i < post_resp.data.length; i++) {
+        post_container.innerHTML += `
+        <div class="post-container">
+        <div class="post">
+        <div class="user-pic">
+            <img id="profile-pic" src="${post_resp.data[i].user[0].profile_picture}" alt="display-pic">
+        </div>
+        <div class="post-content">
+            <div class="post-details">
+                <div id="post-id">${post_resp.data[i].post.id}</div>
+                <h2 id="user-info">${post_resp.data[i].user[0].username}<br><span>${post_resp.data[i].user[0].description}</span></h2>
+                <i><h4 id="location">Location: ${post_resp.data[i].user[0].location}</h4></i>
+                <div class="post-info">
+                    <h3 id="skill-to-offer">Skill to offer: <br> ${post_resp.data[i].post.skill_to_offer}</h3>
+                    <hr>
+                    <h3 id="skill-to-learn">Skill to learn: <br> ${post_resp.data[i].post.skill_to_learn}</h3>
+                    <hr>
+                    <h3 id="offer-time">Offer time: <br> ${post_resp.data[i].post.offer_time} hour(s)</h3>
+                </div>
+                <div class="delete-post">
+                    <button id="delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>`
+    }
+
+    // delete post
+    const delete_post = document.getElementById('delete-btn')
+    delete_post.addEventListener('click', async() => {
+        const id = document.getElementById('post-id')
+        const post_id = id.innerHTML
+        const delete_url = base_url + "posts/delete-post"
+        const form_data = new FormData()
+        form_data.append('post_id', post_id)
+        const delete_resp = await timebank_pages.postAPI(delete_url, form_data, tokenn)
+        location.assign('../html/profile.html')
+    })
 }
 
 // ##########################
