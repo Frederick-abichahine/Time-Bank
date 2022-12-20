@@ -56,4 +56,39 @@ Then simply hover over that post and a message button will pop up!
 <img align="center" width="50%" height="50%" src="./readme-assets/screenshot_7.png">  
 
 When clicked, you would be able to send private messages back and forth with the owner of that post... well not yet, as soon as it gets implementd! :)  
+After browsing the feed for a while, you might want to take a look at your own profile.  
+  
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_8.png">  
 
+To do so, just click on the user icon on the navigation bar.  
+
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_9.png">  
+
+There you go! All your account details and posts will be displayed here.  
+Hmm... but where can you see more & edit your profile?  
+
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_10.png">  
+  
+It is simple! Once again just hover over your profile card and eveything will appear!  
+
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_11.png">  
+
+Pressing on the edit profile button will take you to a page where you will be able to edit your username, email, profile picture and more...   
+
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_12.png">  
+
+After saving your changes, you will be sent back to your profile.  
+You may scroll down to see all the trades that you have posted.  
+But let us say that you posted a cringy post (as most of us had at one point), and you may want to delete it. How?  
+  
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_13.png">  
+
+It is all about hovering! Move your cursor on to the post that you would like to delete and you will see a delete button pop up. (as well as a nice red color)  
+We might want to skip the message & about pages for now (they will be done soon! I promise!)  
+
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_14.png">  
+
+After a nice journey comes a little rest, so you might want to logout by pressing on the exit icon on your navigation bar.  
+
+<hr>
+Thank you for visiting!
