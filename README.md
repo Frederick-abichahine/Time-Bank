@@ -18,6 +18,6 @@ A time bank has always existed in theory; however, it has never been implemented
 2- Google Maps / Location Sharing  
 3- and more...  
 
-## Tutorial / walkthrough
+## Having a hard time getting started? Follow this simple tutorial:
 
 
