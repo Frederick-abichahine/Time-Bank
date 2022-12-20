@@ -1,25 +1,25 @@
 <h1 align="center"> Time Bank </h1>  
 <p align="center"><img align="center" width="20%" height="20%" src="frontend/assets/time_icon.png"></p>
 
-## What is a time bank?
+## <img align="center" width="5%" alt="time" src="./readme-assets/hour_glass.gif"> What is a time bank?
 It is in it's name, a bank where the only currency is time! Namely, it is a reciprocity-based work trading system in which hours are the currency. With time banking, a person with one skill set can bank and trade hours of work for equal hours of work in another skill set instead of paying or being paid for services. In addition, the hours banked are always traded equally regardless of the services rendered. This equality is intended to foster ties in communities and, by making all contributions valued equally, encourage equality in the communities themselves.
 
 
-## What is the purpose of this website?
+## <img align="center" width="5%" alt="time" src="./readme-assets/hour_glass.gif"> What is the purpose of this website?
 A time bank has always existed in theory; however, it has never been implemented... at least not as a social website. Hence, the purpose of this website is to bring life to the time bank by allowing users to create an account, post trades, see other trades that might be suitable for them and so on.
 
-## What are some sexy features used here?
+## <img align="center" width="5%" alt="time" src="./readme-assets/hour_glass.gif"> What are some sexy features used here?
 1- Spotlight Effects  
 2- Parallax Effects  
 3- Dynamic Movements  
 4- SEO  
 
-## What features to expect in the future?
+## <img align="center" width="5%" alt="time" src="./readme-assets/hour_glass.gif"> What features to expect in the future?
 1- Livechat (firebase)  
 2- Google Maps / Location Sharing  
 3- and more...  
 
-## <p align="center"> Having a hard time getting started? <br> Follow this simple tutorial:</p>  
+## <img align="center" width="5%" alt="time" src="./readme-assets/hour_glass.gif"> Having a hard time getting started? Follow this simple tutorial:  
 <p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_1.png"></p>  
 
 <p align="center">First and foremost, you need to create an account. To do so, you must click on the toggle button (look at the red arrow in the image above) to flip the login card to the sign up card.</p>  
@@ -95,4 +95,4 @@ But let us say that you posted a cringy post (as most of us had at one point), a
 <p align="center">After a nice journey comes a little rest, so you might want to logout by pressing on the exit icon on your navigation bar.</p>  
 
 <hr>
-<i><h3 align="center">Thank you for visiting! </h3></i>
+<i><h3 align="center"><img align="center" width="5%" alt="time" src="./readme-assets/hour_glass.gif"> Thank you for visiting! <img align="center" width="5%" alt="time" src="./readme-assets/hour_glass.gif"></h3></i>
