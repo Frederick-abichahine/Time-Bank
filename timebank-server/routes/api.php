@@ -22,6 +22,8 @@ Route::group(['prefix' => 'v0.1'], function () {
     Route::group(['prefix' => 'posts'], function () {
         Route::get('count-posts', [PostController::class, 'countPosts']);
         Route::get('get-all-posts', [PostController::class, 'getAllPosts']);
+        Route::get('get-user-posts', [PostController::class, 'getUserPosts']);
+        Route::post('delete-post', [PostController::class, 'deletePost']);
         Route::post('create-post', [PostController::class, 'createPost']);
     });
 
