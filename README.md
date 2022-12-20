@@ -36,4 +36,24 @@ Now what? Well, here comes the fun part!
 You should now scroll down to view the posts, but while doing so you might notice some things moving around...IT IS A PARALLAX EFFECT!  
 Double woohoo!
 
-<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_4.png"> 
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_4.png">  
+
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_5.png">  
+
+After scrolling for a bit, you will notice more things appear.  
+1) The search bar... what? where?? The glowing black circle at the top of the page!  
+2) The navigation bar. Yes, that bar with the spotlight.  
+3) Lastly, the first post of the feed! Triple woohoo!  
+
+Now, what happens if we click on that infamous glowing black orb?  
+
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_6.png">  
+
+Boom! You can now search for specific offers of interest rather than looking at all available options!  
+What if you find an interesting post?  
+Then simply hover over that post and a message button will pop up!
+
+<img align="center" width="50%" height="50%" src="./readme-assets/screenshot_7.png">  
+
+When clicked, you would be able to send private messages back and forth with the owner of that post... well not yet, as soon as it gets implementd! :)  
+
