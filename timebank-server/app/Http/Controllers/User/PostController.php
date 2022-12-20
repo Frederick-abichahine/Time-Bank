@@ -64,11 +64,24 @@ class PostController extends Controller
             $post->skill_to_learn = $request->skill_to_learn;
             $post->offer_time = $request->offer_time;
             $post->user_id = Auth::user()->id; //getting the user id of the logged in user
-            $post->save();
-            return $post;
+            // Ensuring a successful save
+            if($post->save()){
+                return Response::json([
+                    "status" => "success",
+                    "results" => $post
+                ], 200);
+            }else{
+                return Response::json([
+                    "status" => "failure",
+                    "results" => []
+                ], 400);
+            }
         }
         else{
-            return 'You are not logged in';
+            return Response::json([
+                "status" => "failure",
+                "message" => "You are not logged in"
+            ], 400);
         }
         
     }
