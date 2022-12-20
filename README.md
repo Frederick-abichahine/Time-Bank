@@ -84,10 +84,13 @@ But let us say that you posted a cringy post (as most of us had at one point), a
   
 <p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_13.png"></p>  
 
-<p align="center">It is all about hovering! Move your cursor on to the post that you would like to delete and you will see a delete button pop up. (as well as a nice red color)  
-We might want to skip the message & about pages for now (they will be done soon! I promise!)</p>   
+<p align="center">It is all about hovering! Move your cursor on to the post that you would like to delete and you will see a delete button pop up. (as well as a nice red color)</p>    
 
 <p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_14.png"></p>  
+
+<p align="center">Moving on, you might want to post a trade. You can do so by clicking on the "+" icon near the center of your navigation bar. This will allow you to fill out the required fields and post your trade for others to see! Also, we might want to skip the message & about pages for now (they will be done soon! I promise!)</p>  
+
+<p align="center"><img align="center" width="50%" height="50%" src="./readme-assets/screenshot_15.png"></p>  
 
 <p align="center">After a nice journey comes a little rest, so you might want to logout by pressing on the exit icon on your navigation bar.</p>  
 
