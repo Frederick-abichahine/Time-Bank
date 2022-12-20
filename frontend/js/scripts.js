@@ -62,7 +62,6 @@ timebank_pages.loadLoginSignup = async() => {
         s_formData.append('email', s_email)
         s_formData.append('password', s_password)
         const s_resp = await timebank_pages.postAPI(s_url, s_formData)
-        console.log(s_resp)
 
         if (s_resp){
             s_message.innerHTML = "<i><h6 style = \"color: green;\"> Success</h6></i>"
@@ -172,8 +171,7 @@ timebank_pages.loadProfile = async() => {
     timebank_pages.loadNav(118) // 118px will be the starting position of the spotlight
     const edit_btn = document.getElementById('edit-profile-btn')
     edit_btn.addEventListener('click', () => {
-        console.log('edit button clicked')
-        location.assign('../html/profile.html') // To fix: takes to the edit profile page
+        location.assign('../html/edit_profile.html') // To fix: takes to the edit profile page
     })
     // Getting the token from local storage & using it to get the user's profile information
     const tokenn = localStorage.getItem('token')
@@ -199,11 +197,47 @@ timebank_pages.loadProfile = async() => {
     date_joined.innerHTML = "Joined: " + `${fixed_date}`
 
     // Getting the number of posts the user has made
-    const user_id = resp.data.id
     const url2 = base_url + "posts/count-posts"
     const resp2 = await timebank_pages.getAuthUserAPI(url2, tokenn)
     const num_posts = document.getElementById('num-posts')
     num_posts.innerHTML = "Posts: " + `${resp2.data}`
+}
+
+// ##########################
+// Edit Profile Page Function
+// ##########################
+
+timebank_pages.loadEditProfile = async() => {
+    timebank_pages.loadNav(118)
+    const url = base_url + "users/edit-profile"
+    const tokenn = localStorage.getItem('token')
+
+    // Retrieving the edit profile input fields & button
+    const new_username = document.getElementById('edit-username')
+    const new_email = document.getElementById('edit-email')
+    const new_pp = document.getElementById('edit-pp')
+    const new_description = document.getElementById('edit-desc')
+    const new_location = document.getElementById('edit-location')
+    const save_btn = document.getElementById('edit-profile-btn')
+
+    // Adding an event listener to the save button
+    save_btn.addEventListener('click', async() => {
+        const form_data = new FormData()
+        form_data.append('username', new_username.value)
+        form_data.append('email', new_email.value)
+        form_data.append('profile_picture', new_pp.value)
+        form_data.append('description', new_description.value)
+        form_data.append('location', new_location.value)
+
+        const resp = await timebank_pages.postAPI(url, form_data, tokenn)
+        if (resp) {
+            location.assign('../html/profile.html')
+        }
+        else {
+            const message = document.getElementById('display-error')
+            message.innerHTML = "<i><h4 style = \"color: red; text-align: center;\"> Uh Oh! Something Is Not Right</h4></i>"
+        }
+    })
 }
 
 // ##################
